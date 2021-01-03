@@ -18,7 +18,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import { lightBlue, deepPurple, purple } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Footer from "./Footer";
-import Content from "./Content/Content";
+import About from "./Content/About";
 import { mainList, secondaryList } from "./ListItems";
 import Brightness5Icon from "@material-ui/icons/Brightness5";
 import NightsStayIcon from "@material-ui/icons/NightsStay";
@@ -179,7 +179,7 @@ export default function Dashboard() {
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <Container maxWidth="md" className={classes.container}>
-            <Content />
+            <About />
             <Box pt={4}>
               <Footer />
             </Box>
