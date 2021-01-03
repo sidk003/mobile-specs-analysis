@@ -1,9 +1,11 @@
 const express = require("express");
 
+const getAbout = require("../controllers/about.js");
+const getImageLinks = require("../controllers/imageLinks.js");
+
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("This works!");
-});
+// router.get("/", getImageLinks);
+router.get("/", getAbout);
 
 module.exports = router;

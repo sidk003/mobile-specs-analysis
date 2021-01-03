@@ -15,6 +15,13 @@ const useStyles = makeStyles((theme) => ({
     overflow: "hiddden",
     flexDirection: "column",
     justifyContent: "center",
+    marginTop: 20,
+  },
+  section: {
+    margin: theme.spacing(2),
+  },
+  header: {
+    marginLeft: 15,
   },
 }));
 
@@ -23,21 +30,25 @@ export default function About() {
 
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12} md={12} lg={12} xl={12}>
+      <Grid item xs={12}>
         <Carousel />
       </Grid>
-      <Grid item xs={12} md={12} lg={12} xl={12}>
+      <Grid item xs={12}>
         <Paper className={classes.paper}>
-          <Typography variant="h4" gutterBottom>
-            About Us
-          </Typography>
+          <div className={classes.header}>
+            <Typography variant="h4" gutterBottom>
+              About Us
+            </Typography>
+          </div>
           <Divider />
-          <Typography variant="body1" gutterBottom>
-            body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore
-            consectetur, neque doloribus, cupiditate numquam dignissimos laborum
-            fugiat deleniti? Eum quasi quidem quibusdam.
-          </Typography>
+          <div className={classes.section}>
+            <Typography variant="body1" gutterBottom>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+              blanditiis tenetur unde suscipit, quam beatae rerum inventore
+              consectetur, neque doloribus, cupiditate numquam dignissimos
+              laborum fugiat deleniti? Eum quasi quidem quibusdam.
+            </Typography>
+          </div>
         </Paper>
       </Grid>
     </Grid>
