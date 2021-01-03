@@ -12,15 +12,14 @@ import {
   Divider,
   IconButton,
   Container,
-  Switch,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import { lightBlue, deepPurple, purple } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Footer from "./Footer";
-import Content from "./Content";
-import { sidebarList } from "./ListItems";
+import Content from "./Content/Content";
+import { mainList, secondaryList } from "./ListItems";
 import Brightness5Icon from "@material-ui/icons/Brightness5";
 import NightsStayIcon from "@material-ui/icons/NightsStay";
 
@@ -98,9 +97,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Dashboard() {
   const [open, setOpen] = useState(true);
-  const [darkState, setDarkState] = useState(false);
+  const [darkState, setDarkState] = useState(true);
   const palletType = darkState ? "dark" : "light";
-  const mainPrimaryColor = darkState ? purple[800] : lightBlue[500];
+  const mainPrimaryColor = darkState ? purple[800] : lightBlue[700];
   const mainSecondaryColor = darkState ? deepPurple[100] : deepPurple[100];
   const darkTheme = createMuiTheme({
     palette: {
@@ -153,11 +152,10 @@ export default function Dashboard() {
               noWrap
               className={classes.title}
             >
-              Dashboard
+              Logo
             </Typography>
-            {/* <Switch checked={darkState} onChange={handleThemeChange} /> */}
             <IconButton onClick={handleThemeChange}>
-              {darkState ? <NightsStayIcon /> : <Brightness5Icon />}
+              {darkState ? <Brightness5Icon /> : <NightsStayIcon />}
             </IconButton>
           </Toolbar>
         </AppBar>
@@ -174,11 +172,13 @@ export default function Dashboard() {
             </IconButton>
           </div>
           <Divider />
-          <List>{sidebarList}</List>
+          <List>{mainList}</List>
+          <Divider />
+          <List>{secondaryList}</List>
         </Drawer>
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
-          <Container maxWidth="lg" className={classes.container}>
+          <Container maxWidth="md" className={classes.container}>
             <Content />
             <Box pt={4}>
               <Footer />
