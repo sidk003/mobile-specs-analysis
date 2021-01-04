@@ -7,6 +7,7 @@ import {
   Divider,
 } from "@material-ui/core";
 import Carousel from "./Carousel";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -27,6 +28,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function About() {
   const classes = useStyles();
+  const aboutContent = useSelector((state) => state.about);
+  console.log(aboutContent);
 
   return (
     <Grid container spacing={3}>
