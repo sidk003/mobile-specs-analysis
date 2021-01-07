@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import { GlobalContext } from "../../../context/GlobalState";
-import useStyles from "./styles";
+import useStyles from "./Styles";
 
 const Form = () => {
   const classes = useStyles();

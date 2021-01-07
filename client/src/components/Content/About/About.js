@@ -1,34 +1,9 @@
 import React, { useContext, useEffect } from "react";
-import {
-  Grid,
-  Paper,
-  makeStyles,
-  Typography,
-  Divider,
-} from "@material-ui/core";
-import Carousel from "./Carousel";
-import EditContent from "./EditContent";
-import { GlobalContext } from "../../context/GlobalState";
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    padding: theme.spacing(2),
-    display: "flex",
-    overflow: "hiddden",
-    flexDirection: "column",
-    justifyContent: "center",
-    marginTop: 20,
-  },
-  section: {
-    margin: theme.spacing(2),
-  },
-  header: {
-    marginLeft: 15,
-  },
-  popover: {
-    direction: "rtl",
-  },
-}));
+import { Grid, Paper, Typography, Divider } from "@material-ui/core";
+import Carousel from "../Carousel/Carousel";
+import EditContent from "../EditContent";
+import { GlobalContext } from "../../../context/GlobalState";
+import useStyles from "./Styles";
 
 export const About = () => {
   const classes = useStyles();
@@ -36,6 +11,8 @@ export const About = () => {
 
   useEffect(() => {
     getAbout();
+    // below code to avoid warning
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const title = about.map((data) => data.title);

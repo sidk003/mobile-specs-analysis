@@ -2,17 +2,7 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { makeStyles } from "@material-ui/core";
-
-const useStyles = makeStyles(() => ({
-  dimesions: {
-    height: 360,
-    width: 640,
-  },
-  position: {
-    marginLeft: 130,
-  },
-}));
+import useStyles from "./Styles";
 
 export default function Carousel() {
   const classes = useStyles();
@@ -32,7 +22,7 @@ export default function Carousel() {
   ];
   var imgSlides = () =>
     images.map((num) => (
-      <div className={classes.position}>
+      <div className={classes.position} key="to avoid warning useless af">
         <img className={classes.dimesions} src={num.img} alt="Phone Images" />
       </div>
     ));

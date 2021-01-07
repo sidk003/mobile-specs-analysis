@@ -1,7 +1,6 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
 import {
-  makeStyles,
   CssBaseline,
   Drawer,
   Box,
@@ -17,95 +16,12 @@ import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import { lightBlue, deepPurple, purple } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import Footer from "./Footer";
-import { About } from "./Content/About";
-import { mainList, secondaryList } from "./ListItems";
+import Footer from "../Footer/Footer";
+import { About } from "../Content/About/About";
+import { mainList, secondaryList } from "../ListItems";
 import Brightness5Icon from "@material-ui/icons/Brightness5";
 import NightsStayIcon from "@material-ui/icons/NightsStay";
-import { GlobalContext } from "../context/GlobalState";
-
-const drawerWidth = 240;
-
-const useStyles = makeStyles((theme) => ({
-  "@global": {
-    "*::-webkit-scrollbar": {
-      width: "0.95em",
-    },
-    "*::-webkit-scrollbar-track": {
-      "-webkit-box-shadow": "-5px 0px 13px -4px rgba(0,0,0,0.75)",
-    },
-    "*::-webkit-scrollbar-thumb": {
-      backgroundColor: "rgba(96, 92, 97, 0.57)",
-    },
-  },
-  root: {
-    display: "flex",
-  },
-  toolbar: {
-    paddingRight: 24,
-  },
-  toolbarIcon: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    padding: "0 8px",
-    ...theme.mixins.toolbar,
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-  appBarShift: {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  menuButton: {
-    marginRight: 36,
-  },
-  menuButtonHidden: {
-    display: "none",
-  },
-  title: {
-    flexGrow: 1,
-  },
-  drawerPaper: {
-    position: "relative",
-    whiteSpace: "nowrap",
-    width: drawerWidth,
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  drawerPaperClose: {
-    overflowX: "hidden",
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    width: theme.spacing(7),
-    [theme.breakpoints.up("sm")]: {
-      width: theme.spacing(9),
-    },
-  },
-  appBarSpacer: theme.mixins.toolbar,
-  content: {
-    flexGrow: 1,
-    height: "100vh",
-    overflow: "auto",
-  },
-  container: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
-  },
-}));
+import useStyles from "./Styles";
 
 export default function Dashboard() {
   const [open, setOpen] = useState(true);
@@ -135,13 +51,6 @@ export default function Dashboard() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
-  // const { about, getAbout } = useContext(GlobalContext);
-  // console.log("about", about);
-
-  // useEffect(() => {
-  //   getAbout();
-  // }, []);
 
   return (
     <ThemeProvider theme={darkTheme}>
