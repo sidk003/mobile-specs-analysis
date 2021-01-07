@@ -4,7 +4,7 @@ import axios from "axios";
 
 // initial state
 const initialState = {
-  about: "",
+  about: ["About-me", "Sid"],
   error: null,
   loading: true,
 };

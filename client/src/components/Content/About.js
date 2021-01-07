@@ -34,14 +34,12 @@ export default function About() {
   const classes = useStyles();
   // const aboutContent = useSelector((state) => state.about);
   // console.log(aboutContent);
-  const { about, getAbout } = useContext(GlobalContext);
+  const { about } = useContext(GlobalContext);
 
-  console.log(about);
-
-  useEffect(() => {
-    getAbout();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   getAbout();
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   return (
     <Grid container spacing={3}>
@@ -55,17 +53,19 @@ export default function About() {
               <EditContent />
             </div>
             <Typography variant="h4" gutterBottom>
-              About Us
+              {/* About Us */}
+              {about[0]}
             </Typography>
           </div>
 
           <Divider />
           <div className={classes.section}>
             <Typography variant="body1" gutterBottom>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+              {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
               blanditiis tenetur unde suscipit, quam beatae rerum inventore
               consectetur, neque doloribus, cupiditate numquam dignissimos
-              laborum fugiat deleniti? Eum quasi quidem quibusdam.
+              laborum fugiat deleniti? Eum quasi quidem quibusdam. */}
+              {about[1]}
             </Typography>
           </div>
         </Paper>
