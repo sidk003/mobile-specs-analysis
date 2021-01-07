@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import {
   Grid,
   Paper,
@@ -7,7 +7,8 @@ import {
   Divider,
 } from "@material-ui/core";
 import Carousel from "./Carousel";
-import { useSelector } from "react-redux";
+import EditContent from "./EditContent";
+import { GlobalContext } from "../../context/GlobalState";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -24,12 +25,23 @@ const useStyles = makeStyles((theme) => ({
   header: {
     marginLeft: 15,
   },
+  popover: {
+    direction: "rtl",
+  },
 }));
 
 export default function About() {
   const classes = useStyles();
-  const aboutContent = useSelector((state) => state.about);
-  console.log(aboutContent);
+  // const aboutContent = useSelector((state) => state.about);
+  // console.log(aboutContent);
+  const { about, getAbout } = useContext(GlobalContext);
+
+  console.log(about);
+
+  useEffect(() => {
+    getAbout();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Grid container spacing={3}>
@@ -39,10 +51,14 @@ export default function About() {
       <Grid item xs={12}>
         <Paper className={classes.paper}>
           <div className={classes.header}>
+            <div className={classes.popover}>
+              <EditContent />
+            </div>
             <Typography variant="h4" gutterBottom>
               About Us
             </Typography>
           </div>
+
           <Divider />
           <div className={classes.section}>
             <Typography variant="body1" gutterBottom>

@@ -3,11 +3,16 @@ const dotenv = require("dotenv");
 const colors = require("colors");
 const morgan = require("morgan");
 
+const about = require("./routes/about");
+const connectDb = require("./config/db");
+
 dotenv.config({ path: "./config/config.env" });
 
+connectDb();
 const app = express();
+app.use(express.json());
 
-app.get("/", (req, res) => res.send("Henlo"));
+app.use("/", about);
 
 const PORT = process.env.PORT || 5000;
 

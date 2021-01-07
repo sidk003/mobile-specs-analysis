@@ -1,19 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
 import Dashboard from "./components/Dashboard";
-import { useDispatch } from "react-redux";
-import { getAbout } from "./actions/about";
+import { GlobalProvider } from "./context/GlobalState";
 
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getAbout());
-  }, [dispatch]);
-
   return (
     <>
-      <Dashboard />
+      <GlobalProvider>
+        <Dashboard />
+      </GlobalProvider>
     </>
   );
 }
