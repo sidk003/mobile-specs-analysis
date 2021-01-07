@@ -30,16 +30,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function About() {
+export const About = () => {
   const classes = useStyles();
-  // const aboutContent = useSelector((state) => state.about);
-  // console.log(aboutContent);
-  const { about } = useContext(GlobalContext);
+  const { about, getAbout } = useContext(GlobalContext);
 
-  // useEffect(() => {
-  //   getAbout();
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
+  useEffect(() => {
+    getAbout();
+  }, []);
+
+  const title = about.map((data) => data.title);
+  const content = about.map((data) => data.content);
 
   return (
     <Grid container spacing={3}>
@@ -53,23 +53,18 @@ export default function About() {
               <EditContent />
             </div>
             <Typography variant="h4" gutterBottom>
-              {/* About Us */}
-              {about[0]}
+              {title[title.length - 1]}
             </Typography>
           </div>
 
           <Divider />
           <div className={classes.section}>
             <Typography variant="body1" gutterBottom>
-              {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-              blanditiis tenetur unde suscipit, quam beatae rerum inventore
-              consectetur, neque doloribus, cupiditate numquam dignissimos
-              laborum fugiat deleniti? Eum quasi quidem quibusdam. */}
-              {about[1]}
+              {content[content.length - 1]}
             </Typography>
           </div>
         </Paper>
       </Grid>
     </Grid>
   );
-}
+};

@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
-// import { useDispatch, useSelector } from "react-redux";
+import { GlobalContext } from "../../../context/GlobalState";
 import useStyles from "./styles";
 
 const Form = () => {
-  // const [aboutData, setAboutData] = useState({
-  //   title: "",
-  //   content: "",
-  // });
-
   const classes = useStyles();
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
 
-  // const clear = () => {
-  //   setAboutData({
-  //     title: "",
-  //     content: "",
-  //   });
-  // };
+  const { addAbout } = useContext(GlobalContext);
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const newAbout = {
+      id: Math.floor(Math.random() * 100000000),
+      title,
+      content,
+    };
+    addAbout(newAbout);
+  };
 
   return (
     <Paper>
@@ -24,16 +26,26 @@ const Form = () => {
         autoComplete="off"
         noValidate
         className={`${classes.root} ${classes.form}`}
+        onSubmit={onSubmit}
       >
         <Typography variant="h6">Edit About-Us</Typography>
-        <TextField name="title" variant="outlined" label="Title" fullWidth />
         <TextField
-          name="content"
+          type="text"
+          value={title}
+          variant="outlined"
+          label="Title"
+          fullWidth
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <TextField
+          type="text"
+          value={content}
           variant="outlined"
           label="Content"
           fullWidth
           multiline
           rows={4}
+          onChange={(e) => setContent(e.target.value)}
         />
 
         <Button
@@ -46,15 +58,6 @@ const Form = () => {
         >
           Submit
         </Button>
-        {/* <Button
-          variant="contained"
-          color="secondary"
-          size="small"
-          onClick={clear}
-          fullWidth
-        >
-          Clear
-        </Button> */}
       </form>
     </Paper>
   );

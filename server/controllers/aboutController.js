@@ -1,7 +1,7 @@
 const About = require("../models/About");
 
 // @desc    Get data of about-us
-// @route   GET /
+// @route   GET /api/v1/about
 // @access  Public
 exports.getAbout = async (req, res, next) => {
   try {
@@ -21,7 +21,7 @@ exports.getAbout = async (req, res, next) => {
 };
 
 // @desc    Add data of about-us
-// @route   POST /
+// @route   POST /api/v1/about
 // @access  Public
 exports.addAbout = async (req, res, next) => {
   try {

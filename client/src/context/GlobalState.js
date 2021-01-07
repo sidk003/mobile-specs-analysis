@@ -4,7 +4,7 @@ import axios from "axios";
 
 // initial state
 const initialState = {
-  about: ["About-me", "Sid"],
+  about: [],
   error: null,
   loading: true,
 };
@@ -19,8 +19,7 @@ export const GlobalProvider = ({ children }) => {
   // Actions
   async function getAbout() {
     try {
-      const res = await axios.get("/");
-
+      const res = await axios.get("/api/v1/about");
       dispatch({
         type: "GET_ABOUT",
         payload: res.data.data,
@@ -41,7 +40,7 @@ export const GlobalProvider = ({ children }) => {
     };
 
     try {
-      const res = await axios.post("/", about, config);
+      const res = await axios.post("/api/v1/about", about, config);
 
       dispatch({
         type: "ADD_ABOUT",

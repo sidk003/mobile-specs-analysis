@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import clsx from "clsx";
 import {
   makeStyles,
@@ -18,10 +18,11 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import { lightBlue, deepPurple, purple } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Footer from "./Footer";
-import About from "./Content/About";
+import { About } from "./Content/About";
 import { mainList, secondaryList } from "./ListItems";
 import Brightness5Icon from "@material-ui/icons/Brightness5";
 import NightsStayIcon from "@material-ui/icons/NightsStay";
+import { GlobalContext } from "../context/GlobalState";
 
 const drawerWidth = 240;
 
@@ -134,6 +135,13 @@ export default function Dashboard() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  // const { about, getAbout } = useContext(GlobalContext);
+  // console.log("about", about);
+
+  // useEffect(() => {
+  //   getAbout();
+  // }, []);
 
   return (
     <ThemeProvider theme={darkTheme}>
