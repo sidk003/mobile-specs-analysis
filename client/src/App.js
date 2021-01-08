@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Dashboard from "./components/Dashboard/Dashboard";
+import Dashboard from "./components/LandingPage/LandingPage";
 import { GlobalProvider } from "./context/GlobalState";
 
 function App() {
