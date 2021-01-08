@@ -62,6 +62,7 @@ export const GlobalProvider = ({ children }) => {
         loading: state.loading,
         about: state.about,
         addAbout,
+        links: state.links,
       }}
     >
       {children}

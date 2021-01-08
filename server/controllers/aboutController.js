@@ -6,11 +6,10 @@ const About = require("../models/About");
 exports.getAbout = async (req, res, next) => {
   try {
     const about = await About.find();
-
     return res.status(200).json({
       success: true,
       count: about.length,
-      data: about,
+      data: about[about.length - 1],
     });
   } catch (error) {
     return res.status(500).json({
@@ -25,8 +24,6 @@ exports.getAbout = async (req, res, next) => {
 // @access  Public
 exports.addAbout = async (req, res, next) => {
   try {
-    const { title, content } = req.body;
-
     const about = await About.create(req.body);
 
     return res.status(201).json({

@@ -4,26 +4,35 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import useStyles from "./Styles";
 
-export default function Carousel() {
+export const Carousel = ({ imageLinks }) => {
   const classes = useStyles();
-  const huawei = "https://pbs.twimg.com/media/D49BbQLXsAAXAHs.jpg";
-  const iphone = "https://i.ytimg.com/vi/ZLyDvABxGF0/maxresdefault.jpg";
-  const onePlus = "https://i.ytimg.com/vi/PVWLD3064Ng/maxresdefault.jpg";
-  const samsung = "https://i.ytimg.com/vi/ZdC9soHxVC8/maxresdefault.jpg";
-  const xiaomi = "https://i.ytimg.com/vi/WpPw7lUXyI0/maxresdefault.jpg";
-  const google = "https://i.ytimg.com/vi/NBLO6RpofIU/maxresdefault.jpg";
-  var images = [
-    { img: google },
-    { img: onePlus },
-    { img: iphone },
-    { img: huawei },
-    { img: samsung },
-    { img: xiaomi },
-  ];
+
+  const temp = "tps://pbs.twimg.com/media/D49BbQLXsAAXAHs.jpg";
+
+  if (imageLinks !== undefined) {
+    var images = [
+      { img: imageLinks.google },
+      { img: imageLinks.onePlus },
+      { img: imageLinks.iphone },
+      { img: imageLinks.huawei },
+      { img: imageLinks.samsung },
+      { img: imageLinks.xiaomi },
+    ];
+  } else {
+    var images = [
+      { img: temp },
+      { img: temp },
+      { img: temp },
+      { img: temp },
+      { img: temp },
+      { img: temp },
+    ];
+  }
+
   var imgSlides = () =>
-    images.map((num) => (
+    images.map((link) => (
       <div className={classes.position} key="to avoid warning useless af">
-        <img className={classes.dimesions} src={num.img} alt="Phone Images" />
+        <img className={classes.dimesions} src={link.img} alt="Phone Images" />
       </div>
     ));
   return (
@@ -40,4 +49,4 @@ export default function Carousel() {
       </Slider>
     </div>
   );
-}
+};

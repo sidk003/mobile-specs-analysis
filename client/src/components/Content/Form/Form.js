@@ -7,6 +7,7 @@ const Form = () => {
   const classes = useStyles();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [links, setLinks] = useState("");
 
   const { addAbout } = useContext(GlobalContext);
 
@@ -16,6 +17,7 @@ const Form = () => {
       id: Math.floor(Math.random() * 100000000),
       title,
       content,
+      links,
     };
     addAbout(newAbout);
   };
@@ -46,6 +48,17 @@ const Form = () => {
           multiline
           rows={4}
           onChange={(e) => setContent(e.target.value)}
+        />
+        <TextField
+          type="text"
+          value={links}
+          variant="outlined"
+          label="not working yet, try postman"
+          fullWidth
+          multiline
+          rows={4}
+          name="links[]"
+          onChange={(e) => setLinks(e.target.value)}
         />
 
         <Button
