@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
+import { GlobalContext } from "../../context/GlobalState";
 import DashboardIcon from "@material-ui/icons/Dashboard";
-import AppleLogo from "../../Images/apple.png";
+import AppleLogo from "../../Images/applepurple.png";
 import GoogleLogo from "../../Images/google.png";
 import OnePlusLogo from "../../Images/oneplus.png";
-import SamsungLogo from "../../Images/samsung.png";
+import SamsungLogo from "../../Images/samsung48.png";
 import HuaweiLogo from "../../Images/huawei.png";
 import XiaomiLogo from "../../Images/xiaomi.png";
 
@@ -19,48 +20,56 @@ export const mainList = (
   </div>
 );
 
-export const companyList = (
-  <div>
-    <ListItem button>
-      <ListItemIcon>
-        <img src={AppleLogo} />
-      </ListItemIcon>
-      <ListItemText primary="Apple" />
-    </ListItem>
+export const ListItems = () => {
+  const { about } = useContext(GlobalContext);
+  var companyName = ["Apple"];
+  if (about.length !== 0) {
+    companyName = about.sidebarCompany;
+  }
 
-    <ListItem button>
-      <ListItemIcon>
-        <img src={GoogleLogo} />
-      </ListItemIcon>
-      <ListItemText primary="Google" />
-    </ListItem>
+  return (
+    <div>
+      <ListItem button>
+        <ListItemIcon>
+          <img src={AppleLogo} alt="logo" />
+        </ListItemIcon>
+        <ListItemText primary={companyName.first} />
+      </ListItem>
 
-    <ListItem button>
-      <ListItemIcon>
-        <img src={OnePlusLogo} />
-      </ListItemIcon>
-      <ListItemText primary="One-Plus" />
-    </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <img src={GoogleLogo} alt="logo" />
+        </ListItemIcon>
+        <ListItemText primary={companyName.second} />
+      </ListItem>
 
-    <ListItem button>
-      <ListItemIcon>
-        <img src={SamsungLogo} />
-      </ListItemIcon>
-      <ListItemText primary="Samsung" />
-    </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <img src={HuaweiLogo} alt="logo" />
+        </ListItemIcon>
+        <ListItemText primary={companyName.third} />
+      </ListItem>
 
-    <ListItem button>
-      <ListItemIcon>
-        <img src={XiaomiLogo} />
-      </ListItemIcon>
-      <ListItemText primary="Xiaomi" />
-    </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <img src={OnePlusLogo} alt="logo" />
+        </ListItemIcon>
+        <ListItemText primary={companyName.fourth} />
+      </ListItem>
 
-    <ListItem button>
-      <ListItemIcon>
-        <img src={HuaweiLogo} />
-      </ListItemIcon>
-      <ListItemText primary="Huawei" />
-    </ListItem>
-  </div>
-);
+      <ListItem button>
+        <ListItemIcon>
+          <img src={SamsungLogo} alt="logo" />
+        </ListItemIcon>
+        <ListItemText primary={companyName.fifth} />
+      </ListItem>
+
+      <ListItem button>
+        <ListItemIcon>
+          <img src={XiaomiLogo} alt="logo" />
+        </ListItemIcon>
+        <ListItemText primary={companyName.sixth} />
+      </ListItem>
+    </div>
+  );
+};

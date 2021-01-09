@@ -6,26 +6,16 @@ import useStyles from "./Styles";
 
 export const Carousel = ({ imageLinks }) => {
   const classes = useStyles();
-
-  const temp = "tps://pbs.twimg.com/media/D49BbQLXsAAXAHs.jpg";
+  var images = ["Apple"];
 
   if (imageLinks !== undefined) {
-    var images = [
+    images = [
       { img: imageLinks.google },
       { img: imageLinks.onePlus },
       { img: imageLinks.iphone },
       { img: imageLinks.huawei },
       { img: imageLinks.samsung },
       { img: imageLinks.xiaomi },
-    ];
-  } else {
-    var images = [
-      { img: temp },
-      { img: temp },
-      { img: temp },
-      { img: temp },
-      { img: temp },
-      { img: temp },
     ];
   }
 

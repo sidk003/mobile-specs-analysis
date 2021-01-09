@@ -2,7 +2,7 @@ import React from "react";
 import useStyles from "./Styles";
 import { Drawer, List, Divider, IconButton } from "@material-ui/core";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import { mainList, companyList } from "../Sidebar/ListItems";
+import { mainList, ListItems } from "../Sidebar/ListItems";
 import clsx from "clsx";
 
 export const Sidebar = ({ open, handleDrawerClose }) => {
@@ -24,7 +24,9 @@ export const Sidebar = ({ open, handleDrawerClose }) => {
       <Divider />
       <List>{mainList}</List>
       <Divider />
-      <List>{companyList}</List>
+      <List>
+        <ListItems />
+      </List>
     </Drawer>
   );
 };
