@@ -31,4 +31,7 @@ export default makeStyles((theme) => ({
       width: theme.spacing(9),
     },
   },
+  collapsible: {
+    marginTop: 10,
+  },
 }));

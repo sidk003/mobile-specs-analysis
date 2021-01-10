@@ -1,6 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
+import {
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Collapse,
+} from "@material-ui/core";
 import { GlobalContext } from "../../context/GlobalState";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import AppleLogo from "../../Images/apple2.png";
@@ -9,6 +14,7 @@ import OnePlusLogo from "../../Images/oneplus.png";
 import SamsungLogo from "../../Images/samsung.png";
 import HuaweiLogo from "../../Images/huawei.png";
 import XiaomiLogo from "../../Images/xiaomi.png";
+import useStyles from "./Styles";
 
 export const mainList = (
   <div>
@@ -23,10 +29,17 @@ export const mainList = (
 
 export const ListItems = () => {
   const { about } = useContext(GlobalContext);
+  const [open, setOpen] = useState(false);
+  const classes = useStyles();
   var companyName = ["Apple"];
+
   if (about.length !== 0) {
     companyName = about.sidebarCompany;
   }
+
+  const handleNestedListToggle = () => {
+    setOpen(!open);
+  };
 
   return (
     <div>
@@ -65,11 +78,26 @@ export const ListItems = () => {
         <ListItemText primary={companyName.fifth} />
       </ListItem>
 
-      <ListItem button component={Link} to={"/xiaomi"}>
+      <ListItem
+        button
+        component={Link}
+        to={"/xiaomi"}
+        onClick={handleNestedListToggle}
+      >
         <ListItemIcon>
           <img src={XiaomiLogo} alt="logo" />
         </ListItemIcon>
         <ListItemText primary={companyName.sixth} />
+        <Collapse
+          in={open}
+          transitionDuration="auto"
+          unmountOnExit
+          className={classes.collapsible}
+        >
+          <ListItem>Note 10</ListItem>
+          <ListItem>Note 11</ListItem>
+          <ListItem>Note 12</ListItem>
+        </Collapse>
       </ListItem>
     </div>
   );

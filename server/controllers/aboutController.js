@@ -5,11 +5,12 @@ const About = require("../models/About");
 // @access  Public
 exports.getAbout = async (req, res, next) => {
   try {
-    const about = await About.find();
+    const about = await About.findOne();
+    console.log("Data sent from server: ", about);
     return res.status(200).json({
       success: true,
       count: about.length,
-      data: about[about.length - 1],
+      data: about,
     });
   } catch (error) {
     return res.status(500).json({
@@ -24,7 +25,11 @@ exports.getAbout = async (req, res, next) => {
 // @access  Public
 exports.addAbout = async (req, res, next) => {
   try {
-    const about = await About.create(req.body);
+    // const about = await About.create(req.body);
+    const query = { title: "About-Us" };
+    const replacement = req.body;
+    const options = { upsert: true };
+    const about = await About.replaceOne(query, replacement, options);
 
     return res.status(201).json({
       success: true,
