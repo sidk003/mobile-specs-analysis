@@ -26,7 +26,7 @@ export const Carousel = ({ imageLinks }) => {
       </div>
     ));
   return (
-    <div className="carousel">
+    <div>
       <Slider
         dots={true}
         slidesToShow={1}

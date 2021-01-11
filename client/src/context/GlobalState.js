@@ -20,7 +20,6 @@ export const GlobalProvider = ({ children }) => {
   async function getAbout() {
     try {
       const res = await axios.get("/api/v1/about");
-      console.log("data received at client: ", res.data.data);
       dispatch({
         type: "GET_ABOUT",
         payload: res.data.data,

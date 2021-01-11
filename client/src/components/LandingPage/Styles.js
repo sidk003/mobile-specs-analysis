@@ -12,6 +12,7 @@ export default makeStyles((theme) => ({
       backgroundColor: "rgba(96, 92, 97, 0.57)",
     },
   },
+
   root: {
     display: "flex",
   },

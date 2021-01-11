@@ -6,7 +6,6 @@ const About = require("../models/About");
 exports.getAbout = async (req, res, next) => {
   try {
     const about = await About.findOne();
-    console.log("Data sent from server: ", about);
     return res.status(200).json({
       success: true,
       count: about.length,
