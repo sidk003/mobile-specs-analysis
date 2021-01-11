@@ -6,7 +6,7 @@ import useStyles from "./Styles";
 
 export const Carousel = ({ imageLinks }) => {
   const classes = useStyles();
-  var images = ["Apple"];
+  var images = [{}];
 
   if (imageLinks !== undefined) {
     images = [
