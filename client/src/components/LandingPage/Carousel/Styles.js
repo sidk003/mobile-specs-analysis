@@ -8,4 +8,7 @@ export default makeStyles(() => ({
   position: {
     marginLeft: 130,
   },
+  slickSlider: {
+    width: 775,
+  },
 }));

@@ -20,7 +20,7 @@ export default makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     height: "100vh",
-    overflow: "auto",
+    overflowX: "hidden",
   },
   container: {
     paddingTop: theme.spacing(4),

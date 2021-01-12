@@ -15,7 +15,4 @@ export default makeStyles((theme) => ({
   header: {
     marginLeft: 15,
   },
-  popover: {
-    direction: "rtl",
-  },
 }));

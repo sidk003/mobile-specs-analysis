@@ -9,15 +9,15 @@ export const AppleCarousel = ({ imageLinks }) => {
   var images = [
     {
       img:
-        "https://www.esquireme.com/public/styles/516px_688px_portrait/public/images/2020/08/18/iPhone-12-concept-conceptes-iphone.jpg?itok=C98IKjIf",
+        "https://i.pinimg.com/originals/8a/af/59/8aaf59baca457c61ea8526ea047bdcb6.jpg",
     },
     {
       img:
-        "https://cdn1.smartprix.com/rx-iU4RI3mhe-w240-h290/apple-iphone-9.jpg",
+        "https://i.pinimg.com/originals/5a/86/e3/5a86e3c4c25619838d3b5c70932a1988.jpg",
     },
     {
       img:
-        "https://cdn1.smartprix.com/rx-iU4RI3mhe-w240-h290/apple-iphone-9.jpg",
+        "https://i.pinimg.com/originals/1f/4e/ea/1f4eeaf756778f2a00fcc7be3465f6c9.jpg",
     },
   ];
 
@@ -47,6 +47,7 @@ export const AppleCarousel = ({ imageLinks }) => {
         autoplay={true}
         arrows={false}
         autoplaySpeed={3000}
+        className={classes.dimesions}
       >
         {imgSlides()}
       </Slider>

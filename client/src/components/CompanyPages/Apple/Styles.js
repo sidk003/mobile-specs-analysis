@@ -1,6 +1,10 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
+  heading: {
+    marginLeft: "-6vw",
+  },
+
   paperLeft: {
     padding: theme.spacing(2),
     display: "flex",
@@ -8,8 +12,7 @@ export default makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     marginTop: 20,
-    marginLeft: -190,
-    marginRight: 60,
+    marginLeft: "-4vw",
   },
   section: {
     margin: theme.spacing(2),
@@ -17,20 +20,13 @@ export default makeStyles((theme) => ({
   header: {
     marginLeft: 15,
   },
-  popover: {
-    direction: "rtl",
-  },
-  verticalCard: {
+  verticalCarousel: {
     padding: theme.spacing(2),
     display: "flex",
     overflow: "hiddden",
     flexDirection: "column",
     justifyContent: "center",
-    marginTop: -286,
-    marginLeft: 750,
-  },
-  dimesions: {
-    height: 640,
-    width: 360,
+    marginTop: -595,
+    marginLeft: "45vw",
   },
 }));

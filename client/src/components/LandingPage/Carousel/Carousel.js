@@ -34,6 +34,7 @@ export const Carousel = ({ imageLinks }) => {
         autoplay={true}
         arrows={false}
         autoplaySpeed={3000}
+        className={classes.slickSlider}
       >
         {imgSlides()}
       </Slider>
