@@ -1,13 +1,13 @@
 import React from "react";
-import { Card, CardContent, Typography, Divider } from "@material-ui/core";
+import { Card, CardContent } from "@material-ui/core";
 import Chart from "./Chart";
 import useStyles from "./Styles";
 
-export const Stockgraph = () => {
+export const RegionalDistribution = () => {
   const classes = useStyles();
 
   return (
-    <Card variant="outlined" className={classes.stockGraph}>
+    <Card className={classes.card} variant="outlined">
       <CardContent>
         <Chart />
       </CardContent>

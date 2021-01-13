@@ -1,12 +1,15 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
-  stockGraph: {
-    width: 700,
-    height: 300,
-    marginTop: -640,
+  card: {
+    width: 380,
+    height: 320,
+    marginLeft: 320,
+    marginTop: -320,
+    textAlign: "center",
   },
-  stockGraphTitle: {
+
+  title: {
     fontSize: 14,
   },
 }));

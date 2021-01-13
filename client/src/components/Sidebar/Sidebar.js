@@ -7,7 +7,6 @@ import clsx from "clsx";
 
 export const Sidebar = ({ open, handleDrawerClose }) => {
   const classes = useStyles();
-
   return (
     <Drawer
       variant="permanent"

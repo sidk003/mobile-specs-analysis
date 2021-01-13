@@ -35,7 +35,7 @@ export const AppleCarousel = ({ imageLinks }) => {
   var imgSlides = () =>
     images.map((link) => (
       <div key="to avoid warning useless af">
-        <img className={classes.dimesions} src={link.img} alt="Phone Images" />
+        <img className={classes.dimensions} src={link.img} alt="Phone Images" />
       </div>
     ));
   return (
@@ -47,7 +47,7 @@ export const AppleCarousel = ({ imageLinks }) => {
         autoplay={true}
         arrows={false}
         autoplaySpeed={3000}
-        className={classes.dimesions}
+        className={classes.carousel}
       >
         {imgSlides()}
       </Slider>

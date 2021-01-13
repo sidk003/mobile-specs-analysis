@@ -33,6 +33,7 @@ export default function LandingPage() {
     },
   });
   const classes = useStyles();
+
   const handleThemeChange = () => {
     setDarkState(!darkState);
   };
