@@ -20,7 +20,7 @@ const headCells = [
   {
     id: "price",
     numeric: true,
-    label: "Price in U.S.D",
+    label: "Price in U.S.D (Starting Price)",
   },
 ];
 

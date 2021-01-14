@@ -16,19 +16,19 @@ function createData(name, release, price) {
 }
 
 const rows = [
-  createData("iPhone 12 Pro", "23-10-20", 3.7),
-  createData("iPhone 12 Pro Max", "13-11-20", 25.0),
-  createData("iPhone 12", "23-10-20", 16.0),
-  createData("iPhone 12 Mini", "13-11-20", 6.0),
-  createData("iPhone SE (2nd)", "24-04-20", 16.0),
-  createData("iPhone 11 Pro", "20-09-19", 3.2),
-  createData("iPhone 11 Pro Max", "20-09-19", 9.0),
-  createData("iPhone 11", "20-09-19", 0.0),
-  createData("iPhone XR", "26-10-18", 26.0),
-  createData("iPhone XS", "21-09-18", 0.2),
-  createData("iPhone X", "03-11-17", 0),
-  createData("iPhone 8", "22-09-17", 19.0),
-  createData("iPhone 8 Plus", "22-09-17", 18.0),
+  createData("iPhone 12 Pro", "23-10-20", 999),
+  createData("iPhone 12 Pro Max", "13-11-20", 1099),
+  createData("iPhone 12", "23-10-20", 829),
+  createData("iPhone 12 Mini", "13-11-20", 729),
+  createData("iPhone SE (2nd)", "24-04-20", 399),
+  createData("iPhone 11 Pro", "20-09-19", 999),
+  createData("iPhone 11 Pro Max", "20-09-19", 1099),
+  createData("iPhone 11", "20-09-19", 699),
+  createData("iPhone XR", "26-10-18", 749),
+  createData("iPhone XS", "21-09-18", 999),
+  createData("iPhone X", "03-11-17", 999),
+  createData("iPhone 8", "22-09-17", 699),
+  createData("iPhone 8 Plus", "22-09-17", 799),
 ];
 
 function descendingComparator(a, b, orderBy) {
