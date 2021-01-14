@@ -6,7 +6,7 @@ export default class Chart extends Component {
     const options = {
       animationEnabled: true,
       title: {
-        text: "Share of people using Iphone in 2019",
+        text: "Share of people using iphone in 2019",
       },
       theme: "light2",
       data: [

@@ -8,7 +8,7 @@ export const Minicard = () => {
   return (
     <Card className={classes.card} variant="outlined">
       <CardContent>
-        <Typography variant="h6" color="textSecondary">
+        <Typography className={classes.title} color="textSecondary">
           Percent Apple iphones sold among all smartphones sold worldwide:
         </Typography>
         <Typography variant="h4" component="h2">

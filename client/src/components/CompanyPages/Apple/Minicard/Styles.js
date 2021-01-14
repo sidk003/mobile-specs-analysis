@@ -10,4 +10,7 @@ export default makeStyles((theme) => ({
   button: {
     left: 85,
   },
+  title: {
+    font: 12,
+  },
 }));

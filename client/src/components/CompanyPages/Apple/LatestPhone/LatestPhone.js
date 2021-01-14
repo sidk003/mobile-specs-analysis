@@ -16,7 +16,7 @@ export const LatestPhone = () => {
           Latest Realease:
         </Typography>
         <Typography variant="h4" component="h2">
-          Iphone 12
+          iphone 12
         </Typography>
       </CardContent>
       <CardActions>

@@ -5,6 +5,7 @@ import { Stockgraph } from "./StockGraph/StockGraph";
 import { LatestPhone } from "./LatestPhone/LatestPhone";
 import { Minicard } from "./Minicard/Minicard";
 import { RegionalDistribution } from "./RegionalDistribution/RegionalDistribution";
+import { PhoneTable } from "./Table/Table";
 import useStyles from "./Styles";
 
 export const Apple = () => {
@@ -20,6 +21,7 @@ export const Apple = () => {
       <LatestPhone />
       <Minicard />
       <RegionalDistribution />
+      <PhoneTable />
     </div>
   );
 };
