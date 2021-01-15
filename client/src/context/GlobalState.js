@@ -19,7 +19,7 @@ export const GlobalProvider = ({ children }) => {
   // Actions
   async function getAbout() {
     try {
-      const res = await axios.get("/api/v1/about");
+      const res = await axios.get("/api/v1/");
       dispatch({
         type: "GET_ABOUT",
         payload: res.data.data,
@@ -40,7 +40,7 @@ export const GlobalProvider = ({ children }) => {
     };
 
     try {
-      const res = await axios.post("/api/v1/about", about, config);
+      const res = await axios.post("/api/v1/", about, config);
 
       dispatch({
         type: "ADD_ABOUT",

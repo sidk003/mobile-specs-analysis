@@ -4,6 +4,7 @@ const colors = require("colors");
 const morgan = require("morgan");
 
 const about = require("./routes/about");
+const apple = require("./routes/apple");
 const connectDb = require("./config/db");
 
 dotenv.config({ path: "./config/config.env" });
@@ -16,7 +17,8 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-app.use("/api/v1/about", about);
+app.use("/api/v1/", about);
+app.use("/api/v1/apple", apple);
 
 const PORT = process.env.PORT || 5000;
 

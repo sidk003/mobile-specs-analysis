@@ -1,15 +1,15 @@
-const About = require("../models/About");
+const Apple = require("../models/Apple");
 
-// @desc    Get data of about-us
-// @route   GET /api/v1/
+// @desc    Get data of Apple
+// @route   GET /api/v1/apple
 // @access  Public
-exports.getAbout = async (req, res, next) => {
+exports.getApple = async (req, res, next) => {
   try {
-    const about = await About.findOne();
+    const apple = await Apple.findOne();
     return res.status(200).json({
       success: true,
-      count: about.length,
-      data: about,
+      count: apple.length,
+      data: apple,
     });
   } catch (error) {
     return res.status(500).json({
@@ -19,20 +19,19 @@ exports.getAbout = async (req, res, next) => {
   }
 };
 
-// @desc    Add data of about-us
-// @route   POST /api/v1/
+// @desc    Add data to Apple
+// @route   POST /api/v1/apple
 // @access  Public
-exports.addAbout = async (req, res, next) => {
+exports.addApple = async (req, res, next) => {
   try {
-    // const about = await About.create(req.body);
-    const query = { title: "About-Us" };
+    const query = { title: "Apple" };
     const replacement = req.body;
     const options = { upsert: true };
-    const about = await About.replaceOne(query, replacement, options);
+    const apple = await Apple.replaceOne(query, replacement, options);
 
     return res.status(201).json({
       success: true,
-      data: about,
+      data: apple,
     });
   } catch (error) {
     if (error.name === "ValidationError") {
