@@ -1,39 +1,51 @@
-import React, { Component } from "react";
+import React from "react";
 import { CanvasJSChart } from "canvasjs-react-charts";
 
-export default class Chart extends Component {
-  render() {
-    const options = {
-      animationEnabled: true,
-      title: {
-        text: "Share of people using iphone in 2019",
-      },
-      theme: "light2",
-      data: [
-        {
-          type: "doughnut",
-          showInLegend: true,
-          indexLabel: "{name}: {y}",
-          yValueFormatString: "#,###'%'",
-          dataPoints: [
-            { name: "U.S.A", y: 59.63 },
-            { name: "Australia", y: 56.93 },
-            { name: "Canada", y: 50.62 },
-            { name: "U.K", y: 50.03 },
-            { name: "India", y: 4.8 },
-          ],
-        },
-      ],
-    };
-    const containerProps = {
-      width: "100%",
-      height: "290px",
-      margin: "auto",
-    };
-    return (
-      <div>
-        <CanvasJSChart options={options} containerProps={containerProps} />
-      </div>
-    );
+export const Chart = ({ doughnutchart }) => {
+  var country1 = "";
+  var country2 = "";
+  var country3 = "";
+  var country4 = "";
+  var country5 = "";
+
+  if (doughnutchart !== undefined) {
+    country1 = doughnutchart.entry1;
+    country2 = doughnutchart.entry2;
+    country3 = doughnutchart.entry3;
+    country4 = doughnutchart.entry4;
+    country5 = doughnutchart.entry5;
   }
-}
+
+  const options = {
+    animationEnabled: true,
+    title: {
+      text: "Share of people using iphone in 2019",
+    },
+    theme: "light2",
+    data: [
+      {
+        type: "doughnut",
+        showInLegend: true,
+        indexLabel: "{name}: {y}",
+        yValueFormatString: "#,###'%'",
+        dataPoints: [
+          { name: country1.name, y: country1.value },
+          { name: country2.name, y: country2.value },
+          { name: country3.name, y: country3.value },
+          { name: country4.name, y: country4.value },
+          { name: country5.name, y: country5.value },
+        ],
+      },
+    ],
+  };
+  const containerProps = {
+    width: "100%",
+    height: "290px",
+    margin: "auto",
+  };
+  return (
+    <div>
+      <CanvasJSChart options={options} containerProps={containerProps} />
+    </div>
+  );
+};
