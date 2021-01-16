@@ -14,9 +14,15 @@ export const About = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const title = about.title;
-  const content = about.content;
-  const imageLinks = about.links;
+  var title = "";
+  var content = "";
+  var imageLinks = "";
+
+  if (about !== undefined) {
+    title = about.title;
+    content = about.content;
+    imageLinks = about.links;
+  }
 
   return (
     <Grid container spacing={3}>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import { Apple } from "../CompanyPages/Apple/Apple";
 import { Google } from "../CompanyPages/Google/Google";
 import { Huawei } from "../CompanyPages/Huawei/Huawei";

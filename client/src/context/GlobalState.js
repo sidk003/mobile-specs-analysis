@@ -5,6 +5,7 @@ import axios from "axios";
 // initial state
 const initialState = {
   about: [],
+  apple: [],
   error: null,
   loading: true,
 };
@@ -54,6 +55,22 @@ export const GlobalProvider = ({ children }) => {
     }
   }
 
+  // Apple
+  async function getApple() {
+    try {
+      const res = await axios.get("/api/v1/apple");
+      dispatch({
+        type: "GET_APPLE",
+        payload: res.data.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: "APPLE_ERROR",
+        payload: err.response.data.error,
+      });
+    }
+  }
+
   return (
     <GlobalContext.Provider
       value={{
@@ -62,7 +79,8 @@ export const GlobalProvider = ({ children }) => {
         loading: state.loading,
         about: state.about,
         addAbout,
-        links: state.links,
+        apple: state.apple,
+        getApple,
       }}
     >
       {children}

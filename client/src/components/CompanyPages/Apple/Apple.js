@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
+import { GlobalContext } from "../../../context/GlobalState";
 import { Typography } from "@material-ui/core";
 import { AppleCarousel } from "./Carousel/AppleCarousel";
 import { Stockgraph } from "./StockGraph/StockGraph";
@@ -10,13 +11,32 @@ import useStyles from "./Styles";
 
 export const Apple = () => {
   const classes = useStyles();
+
+  const { apple, getApple } = useContext(GlobalContext);
+
+  useEffect(() => {
+    getApple();
+    // below code to avoid warning
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  var companyName = "";
+  var tagline = "";
+  var imageLinks = "";
+
+  if (apple !== undefined) {
+    companyName = apple.title;
+    tagline = apple.tagline;
+    imageLinks = apple.links;
+  }
+
   return (
     <div className={classes.content}>
-      <Typography variant="h2">Apple</Typography>
+      <Typography variant="h2">{companyName}</Typography>
       <Typography variant="h6" color="textSecondary">
-        Think Different.
+        {tagline}
       </Typography>
-      <AppleCarousel />
+      <AppleCarousel imageLinks={imageLinks} />
       <Stockgraph />
       <LatestPhone />
       <Minicard />

@@ -16,6 +16,11 @@ export default (state, action) => {
       return {
         error: action.payload,
       };
+    case "GET_APPLE":
+      return {
+        loading: false,
+        apple: action.payload,
+      };
 
     default:
       return state;
