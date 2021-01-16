@@ -16,6 +16,28 @@ const AppleSchema = new mongoose.Schema({
     title: { type: String, required: true },
     content: { type: String, required: true },
   },
+  doughnutchart: {
+    entry1: {
+      name: { type: String, required: true },
+      value: { type: Number, required: true },
+    },
+    entry2: {
+      name: { type: String, required: true },
+      value: { type: Number, required: true },
+    },
+    entry3: {
+      name: { type: String, required: true },
+      value: { type: Number, required: true },
+    },
+    entry4: {
+      name: { type: String, required: true },
+      value: { type: Number, required: true },
+    },
+    entry5: {
+      name: { type: String, required: true },
+      value: { type: Number, required: true },
+    },
+  },
 });
 
 module.exports = mongoose.model("Apple", AppleSchema);
