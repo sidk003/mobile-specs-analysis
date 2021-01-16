@@ -8,6 +8,14 @@ const AppleSchema = new mongoose.Schema({
     image2: { type: String, required: true },
     image3: { type: String, required: true },
   },
+  minicard1: {
+    title: { type: String, required: true },
+    content: { type: String, required: true },
+  },
+  minicard2: {
+    title: { type: String, required: true },
+    content: { type: String, required: true },
+  },
 });
 
 module.exports = mongoose.model("Apple", AppleSchema);

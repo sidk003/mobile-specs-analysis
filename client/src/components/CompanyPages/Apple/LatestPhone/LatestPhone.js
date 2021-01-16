@@ -6,17 +6,25 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import useStyles from "./Styles";
 
-export const LatestPhone = () => {
+export const LatestPhone = ({ minicard1 }) => {
   const classes = useStyles();
+
+  var title = "";
+  var content = "";
+
+  if (minicard1 !== undefined) {
+    title = minicard1.title;
+    content = minicard1.content;
+  }
 
   return (
     <Card className={classes.card} variant="outlined">
       <CardContent>
         <Typography variant="h6" color="textSecondary">
-          Latest Realease:
+          {title}
         </Typography>
         <Typography variant="h4" component="h2">
-          iphone 12
+          {content}
         </Typography>
       </CardContent>
       <CardActions>

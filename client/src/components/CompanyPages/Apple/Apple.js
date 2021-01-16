@@ -23,11 +23,15 @@ export const Apple = () => {
   var companyName = "";
   var tagline = "";
   var imageLinks = "";
+  var minicard1 = "";
+  var minicard2 = "";
 
   if (apple !== undefined) {
     companyName = apple.title;
     tagline = apple.tagline;
     imageLinks = apple.links;
+    minicard1 = apple.minicard1;
+    minicard2 = apple.minicard2;
   }
 
   return (
@@ -38,8 +42,8 @@ export const Apple = () => {
       </Typography>
       <AppleCarousel imageLinks={imageLinks} />
       <Stockgraph />
-      <LatestPhone />
-      <Minicard />
+      <LatestPhone minicard1={minicard1} />
+      <Minicard minicard2={minicard2} />
       <RegionalDistribution />
       <PhoneTable />
     </div>
