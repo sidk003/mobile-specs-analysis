@@ -26,6 +26,7 @@ export const Apple = () => {
   var minicard1 = "";
   var minicard2 = "";
   var doughnutchart = "";
+  var table = "";
 
   if (apple !== undefined) {
     companyName = apple.title;
@@ -34,6 +35,7 @@ export const Apple = () => {
     minicard1 = apple.minicard1;
     minicard2 = apple.minicard2;
     doughnutchart = apple.doughnutchart;
+    table = apple.table;
   }
 
   return (
@@ -47,7 +49,7 @@ export const Apple = () => {
       <LatestPhone minicard1={minicard1} />
       <Minicard minicard2={minicard2} />
       <RegionalDistribution doughnutchart={doughnutchart} />
-      <PhoneTable />
+      <PhoneTable table={table} />
     </div>
   );
 };

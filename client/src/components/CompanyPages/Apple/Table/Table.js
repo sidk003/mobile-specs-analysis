@@ -15,22 +15,6 @@ function createData(name, release, price) {
   return { name, release, price };
 }
 
-const rows = [
-  createData("iPhone 12 Pro", "23-10-20", 999),
-  createData("iPhone 12 Pro Max", "13-11-20", 1099),
-  createData("iPhone 12", "23-10-20", 829),
-  createData("iPhone 12 Mini", "13-11-20", 729),
-  createData("iPhone SE (2nd)", "24-04-20", 399),
-  createData("iPhone 11 Pro", "20-09-19", 999),
-  createData("iPhone 11 Pro Max", "20-09-19", 1099),
-  createData("iPhone 11", "20-09-19", 699),
-  createData("iPhone XR", "26-10-18", 749),
-  createData("iPhone XS", "21-09-18", 999),
-  createData("iPhone X", "03-11-17", 999),
-  createData("iPhone 8", "22-09-17", 699),
-  createData("iPhone 8 Plus", "22-09-17", 799),
-];
-
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
     return -1;
@@ -57,12 +41,59 @@ function stableSort(array, comparator) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-export const PhoneTable = () => {
+export const PhoneTable = ({ table }) => {
   const classes = useStyles();
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("release");
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+
+  var rows = [];
+  var phone1 = "";
+  var phone2 = "";
+  var phone3 = "";
+  var phone4 = "";
+  var phone5 = "";
+  var phone6 = "";
+  var phone7 = "";
+  var phone8 = "";
+  var phone9 = "";
+  var phone10 = "";
+  var phone11 = "";
+  var phone12 = "";
+  var phone13 = "";
+
+  if (table !== undefined && table.phone1 !== undefined) {
+    phone1 = table.phone1;
+    phone2 = table.phone2;
+    phone3 = table.phone3;
+    phone4 = table.phone4;
+    phone5 = table.phone5;
+    phone6 = table.phone6;
+    phone7 = table.phone7;
+    phone8 = table.phone8;
+    phone9 = table.phone9;
+    phone10 = table.phone10;
+    phone11 = table.phone11;
+    phone12 = table.phone12;
+    phone13 = table.phone13;
+  }
+
+  rows = [
+    createData(phone1.name, phone1.date, phone1.price),
+    createData(phone2.name, phone2.date, phone2.price),
+    createData(phone3.name, phone3.date, phone3.price),
+    createData(phone4.name, phone4.date, phone4.price),
+    createData(phone5.name, phone5.date, phone5.price),
+    createData(phone6.name, phone6.date, phone6.price),
+    createData(phone7.name, phone7.date, phone7.price),
+    createData(phone8.name, phone8.date, phone8.price),
+    createData(phone9.name, phone9.date, phone9.price),
+    createData(phone10.name, phone10.date, phone10.price),
+    createData(phone11.name, phone11.date, phone11.price),
+    createData(phone12.name, phone12.date, phone12.price),
+    createData(phone13.name, phone13.date, phone13.price),
+  ];
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";

@@ -8,7 +8,7 @@ export const Chart = ({ doughnutchart }) => {
   var country4 = "";
   var country5 = "";
 
-  if (doughnutchart !== undefined) {
+  if (doughnutchart !== undefined && doughnutchart.entry1 !== undefined) {
     country1 = doughnutchart.entry1;
     country2 = doughnutchart.entry2;
     country3 = doughnutchart.entry3;
