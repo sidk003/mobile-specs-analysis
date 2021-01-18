@@ -6,12 +6,18 @@ export const Chart = ({ stockData }) => {
   // console.log("stock data received in Chart: ", stockData[0].close);
 
   var xVal = 1,
-    yVal = 100;
+    yVal = 1;
   var dps = [];
+
   for (var i = 0; i < stockData.length; i++) {
     yVal = stockData[i].close;
     dps.push({ x: xVal, y: yVal });
     xVal++;
+  }
+  if (stockData[0] !== undefined) {
+    var date = stockData[stockData.length - 1].date;
+    var parsedDate = new Date(date);
+    console.log("DAte Str: ", typeof parsedDate);
   }
 
   const options = {
@@ -44,25 +50,25 @@ export const Chart = ({ stockData }) => {
     ],
     rangeSelector: {
       inputFields: {
-        startValue: 4000,
-        endValue: 6000,
+        startValue: 3000,
+        endValue: 3032,
         valueFormatString: "###0",
       },
 
       buttons: [
         {
-          label: "1 Day",
-          range: 1000,
+          label: "1 month",
+          range: 30,
           rangeType: "number",
         },
         {
           label: "1 year",
-          range: 2000,
+          range: 365,
           rangeType: "number",
         },
         {
           label: "10 Years",
-          range: 5000,
+          range: 3650,
           rangeType: "number",
         },
         {

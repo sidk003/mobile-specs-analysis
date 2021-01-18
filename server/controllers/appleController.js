@@ -11,7 +11,7 @@ var requestOptions = {
   url:
     "https://api.tiingo.com/tiingo/daily/" +
     symbol +
-    "/prices?startDate=2021-01-02&" +
+    "/prices?startDate=2009-01-02&" +
     `columns=${columnsRequired}`,
   headers: {
     "Content-Type": "application/json",
@@ -22,6 +22,7 @@ var requestOptions = {
 request(requestOptions, function (error, response, body) {
   stockData = JSON.parse(body);
   jsonResponse = { stockData };
+  // console.log("data received: ", jsonResponse);
 });
 
 // @desc    Get data of Apple
