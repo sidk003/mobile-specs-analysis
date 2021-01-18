@@ -59,6 +59,7 @@ export const GlobalProvider = ({ children }) => {
   async function getApple() {
     try {
       const res = await axios.get("/api/v1/apple");
+      console.log("Content received: ", res.data.data);
       dispatch({
         type: "GET_APPLE",
         payload: res.data.data,

@@ -1,4 +1,28 @@
 const Apple = require("../models/Apple");
+var request = require("request");
+var merge = require("lodash.merge");
+
+// Calling Tiingo API
+const symbol = "aapl";
+const columnsRequired = ["close"];
+var jsonResponse = "";
+var stockData = "";
+var requestOptions = {
+  url:
+    "https://api.tiingo.com/tiingo/daily/" +
+    symbol +
+    "/prices?startDate=2021-01-02&" +
+    `columns=${columnsRequired}`,
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: "Token dfeeb56a6c0e72a4c31667b48bfb938fc21c8163",
+  },
+};
+
+request(requestOptions, function (error, response, body) {
+  jsonResponse = JSON.parse(body);
+  stockData = { jsonResponse };
+});
 
 // @desc    Get data of Apple
 // @route   GET /api/v1/apple
@@ -6,10 +30,13 @@ const Apple = require("../models/Apple");
 exports.getApple = async (req, res, next) => {
   try {
     const apple = await Apple.findOne();
+
+    const mergedResponse = merge(stockData, apple);
+    // console.log("mergedData: ", mergedResponse);
     return res.status(200).json({
       success: true,
-      count: apple.length,
-      data: apple,
+      count: mergedResponse.length,
+      data: mergedResponse,
     });
   } catch (error) {
     return res.status(500).json({

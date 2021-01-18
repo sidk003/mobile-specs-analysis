@@ -20,6 +20,8 @@ export const Apple = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // console.log("data received: ", apple);
+
   var companyName = "";
   var tagline = "";
   var imageLinks = "";
