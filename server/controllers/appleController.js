@@ -32,7 +32,6 @@ exports.getApple = async (req, res, next) => {
     const apple = await Apple.findOne();
 
     const mergedResponse = { ...apple._doc, ...jsonResponse };
-    console.log("mergedData: ", mergedResponse);
     return res.status(200).json({
       success: true,
       count: mergedResponse.length,

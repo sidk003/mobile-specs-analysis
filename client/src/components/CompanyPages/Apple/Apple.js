@@ -20,8 +20,6 @@ export const Apple = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // console.log("data received: ", apple);
-
   var companyName = "";
   var tagline = "";
   var imageLinks = "";
@@ -29,8 +27,9 @@ export const Apple = () => {
   var minicard2 = "";
   var doughnutchart = "";
   var table = "";
+  var stockData = "";
 
-  if (apple !== undefined) {
+  if (apple !== undefined && apple.stockData !== undefined) {
     companyName = apple.title;
     tagline = apple.tagline;
     imageLinks = apple.links;
@@ -38,6 +37,7 @@ export const Apple = () => {
     minicard2 = apple.minicard2;
     doughnutchart = apple.doughnutchart;
     table = apple.table;
+    stockData = apple.stockData;
   }
 
   return (
@@ -47,7 +47,7 @@ export const Apple = () => {
         {tagline}
       </Typography>
       <AppleCarousel imageLinks={imageLinks} />
-      <Stockgraph />
+      <Stockgraph stockData={stockData} />
       <LatestPhone minicard1={minicard1} />
       <Minicard minicard2={minicard2} />
       <RegionalDistribution doughnutchart={doughnutchart} />
