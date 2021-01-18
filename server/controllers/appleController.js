@@ -20,8 +20,8 @@ var requestOptions = {
 };
 
 request(requestOptions, function (error, response, body) {
-  jsonResponse = JSON.parse(body);
-  stockData = { jsonResponse };
+  stockData = JSON.parse(body);
+  jsonResponse = { stockData };
 });
 
 // @desc    Get data of Apple
@@ -31,8 +31,8 @@ exports.getApple = async (req, res, next) => {
   try {
     const apple = await Apple.findOne();
 
-    const mergedResponse = merge(stockData, apple);
-    // console.log("mergedData: ", mergedResponse);
+    const mergedResponse = { ...apple._doc, ...jsonResponse };
+    console.log("mergedData: ", mergedResponse);
     return res.status(200).json({
       success: true,
       count: mergedResponse.length,
