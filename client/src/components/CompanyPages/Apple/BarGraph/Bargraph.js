@@ -3,13 +3,13 @@ import { Card, CardContent } from "@material-ui/core";
 import { Chart } from "./Chart";
 import useStyles from "./Styles";
 
-export const Bargraph = () => {
+export const Bargraph = ({ bargraph }) => {
   const classes = useStyles();
 
   return (
     <Card variant="outlined" className={classes.barGraph}>
       <CardContent>
-        <Chart />
+        <Chart bargraph={bargraph} />
       </CardContent>
     </Card>
   );

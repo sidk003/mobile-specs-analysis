@@ -30,6 +30,7 @@ export const Apple = () => {
   var doughnutchart = "";
   var table = "";
   var stockData = "";
+  var bargraph = "";
 
   if (apple !== undefined && apple.stockData !== undefined) {
     companyName = apple.title;
@@ -40,6 +41,7 @@ export const Apple = () => {
     doughnutchart = apple.doughnutchart;
     table = apple.table;
     stockData = apple.stockData;
+    bargraph = apple.bargraph;
   }
 
   return (
@@ -53,7 +55,7 @@ export const Apple = () => {
       {/* <LatestPhone minicard1={minicard1} />
       <Minicard minicard2={minicard2} />
       <RegionalDistribution doughnutchart={doughnutchart} /> */}
-      <Bargraph />
+      <Bargraph bargraph={bargraph} />
       <PhoneTable table={table} />
       <Divider className={classes.divider} />
       <Typography className={classes.header}>iPhone Releases</Typography>
