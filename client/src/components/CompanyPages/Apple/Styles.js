@@ -8,4 +8,13 @@ export default makeStyles((theme) => ({
     width: "85vw",
     overflow: "hidden",
   },
+  divider: {
+    width: 1080,
+    marginTop: 30,
+    marginBottom: 30,
+  },
+  header: {
+    fontSize: 34,
+    marginLeft: 400,
+  },
 }));

@@ -17,10 +17,10 @@ export const Chart = ({ doughnutchart }) => {
   }
 
   const options = {
-    animationEnabled: true,
     title: {
       text: "Share of people using iphone in 2019",
     },
+    animationEnabled: true,
     theme: "light2",
     data: [
       {

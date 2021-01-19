@@ -1,12 +1,14 @@
 import React, { useEffect, useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
-import { Typography } from "@material-ui/core";
+import { Typography, Divider } from "@material-ui/core";
 import { AppleCarousel } from "./Carousel/AppleCarousel";
 import { Stockgraph } from "./StockGraph/StockGraph";
 import { LatestPhone } from "./LatestPhone/LatestPhone";
 import { Minicard } from "./Minicard/Minicard";
 import { RegionalDistribution } from "./RegionalDistribution/RegionalDistribution";
 import { PhoneTable } from "./Table/Table";
+import { Bargraph } from "./BarGraph/Bargraph";
+import { TwelveProMax } from "./PhoneModels/TwelveProMax/TwelveProMax";
 import useStyles from "./Styles";
 
 export const Apple = () => {
@@ -48,10 +50,15 @@ export const Apple = () => {
       </Typography>
       <AppleCarousel imageLinks={imageLinks} />
       <Stockgraph stockData={stockData} />
-      <LatestPhone minicard1={minicard1} />
+      {/* <LatestPhone minicard1={minicard1} />
       <Minicard minicard2={minicard2} />
-      <RegionalDistribution doughnutchart={doughnutchart} />
+      <RegionalDistribution doughnutchart={doughnutchart} /> */}
+      <Bargraph />
       <PhoneTable table={table} />
+      <Divider className={classes.divider} />
+      <Typography className={classes.header}>iPhone Releases</Typography>
+      <Divider className={classes.divider} />
+      <TwelveProMax />
     </div>
   );
 };

@@ -1,9 +1,9 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
-  stockGraph: {
+  barGraph: {
     width: 700,
-    height: 300,
-    marginTop: -640,
+    height: 320,
+    marginTop: 20,
   },
 }));

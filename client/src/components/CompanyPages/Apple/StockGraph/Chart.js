@@ -3,8 +3,6 @@ import CanvasJSReact from "../../../../canvasjs.stock.react";
 var CanvasJSStockChart = CanvasJSReact.CanvasJSStockChart;
 
 export const Chart = ({ stockData }) => {
-  // console.log("stock data received in Chart: ", stockData[0].close);
-
   var xVal = 1,
     yVal = 1;
   var dps = [];
@@ -23,6 +21,7 @@ export const Chart = ({ stockData }) => {
   const options = {
     title: {
       text: "Apple Stock Prices",
+      fontSize: 18,
     },
     animationEnabled: true,
     exportEnabled: true,
