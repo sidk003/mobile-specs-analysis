@@ -38,6 +38,56 @@ const AppleSchema = new mongoose.Schema({
       value: { type: Number, required: true },
     },
   },
+  bargraph: {
+    entry1: {
+      name: { type: Number, required: true },
+      value: { type: Number, required: true },
+    },
+    entry2: {
+      name: { type: Number, required: true },
+      value: { type: Number, required: true },
+    },
+    entry3: {
+      name: { type: Number, required: true },
+      value: { type: Number, required: true },
+    },
+    entry4: {
+      name: { type: Number, required: true },
+      value: { type: Number, required: true },
+    },
+    entry5: {
+      name: { type: Number, required: true },
+      value: { type: Number, required: true },
+    },
+    entry6: {
+      name: { type: Number, required: true },
+      value: { type: Number, required: true },
+    },
+    entry7: {
+      name: { type: Number, required: true },
+      value: { type: Number, required: true },
+    },
+    entry8: {
+      name: { type: Number, required: true },
+      value: { type: Number, required: true },
+    },
+    entry9: {
+      name: { type: Number, required: true },
+      value: { type: Number, required: true },
+    },
+    entry10: {
+      name: { type: Number, required: true },
+      value: { type: Number, required: true },
+    },
+    entry11: {
+      name: { type: Number, required: true },
+      value: { type: Number, required: true },
+    },
+    entry12: {
+      name: { type: Number, required: true },
+      value: { type: Number, required: true },
+    },
+  },
   table: {
     phone1: {
       name: { type: String, required: true },
