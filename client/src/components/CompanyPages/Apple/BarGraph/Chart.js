@@ -1,7 +1,16 @@
 import React from "react";
 import { CanvasJSChart } from "canvasjs-react-charts";
+import CanvasJSReact from "../../../../canvasjs.stock.react";
+const CanvasJS = CanvasJSReact.CanvasJS;
 
-export const Chart = ({ bargraph }) => {
+CanvasJS.addColorSet("darkSet", ["#ff471a"]);
+CanvasJS.addColorSet("lightSet", ["#005ce6"]);
+
+export const Chart = ({ bargraph, darkState }) => {
+  // var bgColor = darkState ? "#262626" : "#FFFFFF";
+  var bgTheme = darkState ? "dark2" : "light2";
+  var colorSet = darkState ? "darkSet" : "lightSet";
+
   var year1 = 0;
   var year2 = 0;
   var year3 = 0;
@@ -29,12 +38,11 @@ export const Chart = ({ bargraph }) => {
     year11 = bargraph.entry11;
     year12 = bargraph.entry12;
   }
-  // console.log("Bargraph received: ", bargraph);
 
   const options = {
     animationEnabled: true,
-    exportEnabled: true,
-    theme: "light2",
+    // exportEnabled: true,
+    theme: bgTheme,
     title: {
       text:
         "Unit Sales of the Apple iPhone worldwide from 2007 to 2018 (in millions)",
@@ -43,6 +51,7 @@ export const Chart = ({ bargraph }) => {
     axisY: {
       includeZero: true,
     },
+    backgroundColor: "",
     data: [
       {
         type: "column",

@@ -34,6 +34,7 @@ export default function LandingPage() {
     },
   });
   const classes = useStyles();
+  // console.log("darkstate from app: ", darkState);
 
   const handleThemeChange = () => {
     setDarkState(!darkState);
@@ -63,7 +64,10 @@ export default function LandingPage() {
             <Container maxWidth="md" className={classes.container}>
               <Switch>
                 <Route exact path="/" component={About} />
-                <Route path="/apple" component={Apple} />
+                <Route
+                  path="/apple"
+                  render={() => <Apple darkState={darkState} />}
+                />
                 <Route path="/google" component={Google} />
                 <Route path="/huawei" component={Huawei} />
                 <Route path="/oneplus" component={Oneplus} />

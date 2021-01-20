@@ -1,8 +1,16 @@
 import React from "react";
 import CanvasJSReact from "../../../../canvasjs.stock.react";
 var CanvasJSStockChart = CanvasJSReact.CanvasJSStockChart;
+const CanvasJS = CanvasJSReact.CanvasJS;
 
-export const Chart = ({ stockData }) => {
+CanvasJS.addColorSet("darkSet", ["#ff471a"]);
+CanvasJS.addColorSet("lightSet", ["#005ce6"]);
+
+export const Chart = ({ stockData, darkState }) => {
+  // var bgColor = darkState ? "#262626" : "#FFFFFF";
+  var bgTheme = darkState ? "dark2" : "light2";
+  var colorSet = darkState ? "darkSet" : "lightSet";
+
   var xVal = 1,
     yVal = 1;
   var dps = [];
@@ -23,9 +31,11 @@ export const Chart = ({ stockData }) => {
       text: "Apple Stock Prices",
       fontSize: 18,
     },
+    colorSet: colorSet,
     animationEnabled: true,
-    exportEnabled: true,
-    theme: "light2",
+    // exportEnabled: true,
+    backgroundColor: "",
+    theme: bgTheme,
     charts: [
       {
         axisX: {

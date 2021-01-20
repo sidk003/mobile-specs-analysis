@@ -11,7 +11,7 @@ import { Bargraph } from "./BarGraph/Bargraph";
 import { TwelveProMax } from "./PhoneModels/TwelveProMax/TwelveProMax";
 import useStyles from "./Styles";
 
-export const Apple = () => {
+export const Apple = ({ darkState }) => {
   const classes = useStyles();
 
   const { apple, getApple } = useContext(GlobalContext);
@@ -51,11 +51,11 @@ export const Apple = () => {
         {tagline}
       </Typography>
       <AppleCarousel imageLinks={imageLinks} />
-      <Stockgraph stockData={stockData} />
+      <Stockgraph stockData={stockData} darkState={darkState} />
       {/* <LatestPhone minicard1={minicard1} />
       <Minicard minicard2={minicard2} />
       <RegionalDistribution doughnutchart={doughnutchart} /> */}
-      <Bargraph bargraph={bargraph} />
+      <Bargraph bargraph={bargraph} darkState={darkState} />
       <PhoneTable table={table} />
       <Divider className={classes.divider} />
       <Typography className={classes.header}>iPhone Releases</Typography>
