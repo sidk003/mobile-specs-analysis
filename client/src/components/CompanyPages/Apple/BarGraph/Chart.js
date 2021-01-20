@@ -1,15 +1,16 @@
 import React from "react";
 import { CanvasJSChart } from "canvasjs-react-charts";
-import CanvasJSReact from "../../../../canvasjs.stock.react";
-const CanvasJS = CanvasJSReact.CanvasJS;
-
-CanvasJS.addColorSet("darkSet", ["#ff471a"]);
-CanvasJS.addColorSet("lightSet", ["#005ce6"]);
 
 export const Chart = ({ bargraph, darkState }) => {
-  // var bgColor = darkState ? "#262626" : "#FFFFFF";
-  var bgTheme = darkState ? "dark2" : "light2";
-  var colorSet = darkState ? "darkSet" : "lightSet";
+  const darkTheme = "dark2";
+  const lightTheme = "light2";
+  const black = "#000000";
+  const white = "#FFFFFF";
+  const grey = "#262626";
+
+  var bgColor = darkState ? grey : white;
+  var bgTheme = darkState ? darkTheme : lightTheme;
+  var fontColor = darkState ? white : black;
 
   var year1 = 0;
   var year2 = 0;
@@ -51,12 +52,12 @@ export const Chart = ({ bargraph, darkState }) => {
     axisY: {
       includeZero: true,
     },
-    backgroundColor: "",
+    backgroundColor: bgColor,
     data: [
       {
         type: "column",
         indexLabel: "{y}",
-        indexLabelFontColor: "#FFFFFF",
+        indexLabelFontColor: fontColor,
         indexLabelPlacement: "outside",
         dataPoints: [
           { x: year1.name, y: year1.value },

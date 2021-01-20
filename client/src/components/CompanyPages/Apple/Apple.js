@@ -3,9 +3,6 @@ import { GlobalContext } from "../../../context/GlobalState";
 import { Typography, Divider } from "@material-ui/core";
 import { AppleCarousel } from "./Carousel/AppleCarousel";
 import { Stockgraph } from "./StockGraph/StockGraph";
-import { LatestPhone } from "./LatestPhone/LatestPhone";
-import { Minicard } from "./Minicard/Minicard";
-import { RegionalDistribution } from "./RegionalDistribution/RegionalDistribution";
 import { PhoneTable } from "./Table/Table";
 import { Bargraph } from "./BarGraph/Bargraph";
 import { TwelveProMax } from "./PhoneModels/TwelveProMax/TwelveProMax";
@@ -25,9 +22,6 @@ export const Apple = ({ darkState }) => {
   var companyName = "";
   var tagline = "";
   var imageLinks = "";
-  var minicard1 = "";
-  var minicard2 = "";
-  var doughnutchart = "";
   var table = "";
   var stockData = "";
   var bargraph = "";
@@ -36,9 +30,6 @@ export const Apple = ({ darkState }) => {
     companyName = apple.title;
     tagline = apple.tagline;
     imageLinks = apple.links;
-    minicard1 = apple.minicard1;
-    minicard2 = apple.minicard2;
-    doughnutchart = apple.doughnutchart;
     table = apple.table;
     stockData = apple.stockData;
     bargraph = apple.bargraph;
@@ -52,9 +43,6 @@ export const Apple = ({ darkState }) => {
       </Typography>
       <AppleCarousel imageLinks={imageLinks} />
       <Stockgraph stockData={stockData} darkState={darkState} />
-      {/* <LatestPhone minicard1={minicard1} />
-      <Minicard minicard2={minicard2} />
-      <RegionalDistribution doughnutchart={doughnutchart} /> */}
       <Bargraph bargraph={bargraph} darkState={darkState} />
       <PhoneTable table={table} />
       <Divider className={classes.divider} />

@@ -8,36 +8,6 @@ const AppleSchema = new mongoose.Schema({
     image2: { type: String, required: true },
     image3: { type: String, required: true },
   },
-  minicard1: {
-    title: { type: String, required: true },
-    content: { type: String, required: true },
-  },
-  minicard2: {
-    title: { type: String, required: true },
-    content: { type: String, required: true },
-  },
-  doughnutchart: {
-    entry1: {
-      name: { type: String, required: true },
-      value: { type: Number, required: true },
-    },
-    entry2: {
-      name: { type: String, required: true },
-      value: { type: Number, required: true },
-    },
-    entry3: {
-      name: { type: String, required: true },
-      value: { type: Number, required: true },
-    },
-    entry4: {
-      name: { type: String, required: true },
-      value: { type: Number, required: true },
-    },
-    entry5: {
-      name: { type: String, required: true },
-      value: { type: Number, required: true },
-    },
-  },
   bargraph: {
     entry1: {
       name: { type: Number, required: true },

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
 import { Apple } from "../CompanyPages/Apple/Apple";
 import { Google } from "../CompanyPages/Google/Google";
 import { Huawei } from "../CompanyPages/Huawei/Huawei";
@@ -8,7 +7,7 @@ import { Oneplus } from "../CompanyPages/Oneplus/Oneplus";
 import { Samsung } from "../CompanyPages/Samsung/Samsung";
 import { Xiaomi } from "../CompanyPages/Xiaomi/Xiaomi";
 import { CssBaseline, Box, Container } from "@material-ui/core";
-import { lightBlue, deepPurple, purple } from "@material-ui/core/colors";
+import { lightBlue, deepPurple, red } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Footer from "../Footer/Footer";
 import { About } from "./About/About";
@@ -20,7 +19,7 @@ export default function LandingPage() {
   const [open, setOpen] = useState(true);
   const [darkState, setDarkState] = useState(true);
   const palletType = darkState ? "dark" : "light";
-  const mainPrimaryColor = darkState ? purple[800] : lightBlue[700];
+  const mainPrimaryColor = darkState ? red[800] : lightBlue[700];
   const mainSecondaryColor = darkState ? deepPurple[100] : deepPurple[100];
   const darkTheme = createMuiTheme({
     palette: {
@@ -34,7 +33,6 @@ export default function LandingPage() {
     },
   });
   const classes = useStyles();
-  // console.log("darkstate from app: ", darkState);
 
   const handleThemeChange = () => {
     setDarkState(!darkState);

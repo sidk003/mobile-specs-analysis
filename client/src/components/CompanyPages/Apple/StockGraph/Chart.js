@@ -7,12 +7,17 @@ CanvasJS.addColorSet("darkSet", ["#ff471a"]);
 CanvasJS.addColorSet("lightSet", ["#005ce6"]);
 
 export const Chart = ({ stockData, darkState }) => {
-  // var bgColor = darkState ? "#262626" : "#FFFFFF";
-  var bgTheme = darkState ? "dark2" : "light2";
+  const darkTheme = "dark2";
+  const lightTheme = "light2";
+  const white = "#FFFFFF";
+  const grey = "#262626";
+
+  var bgColor = darkState ? grey : white;
+  var bgTheme = darkState ? darkTheme : lightTheme;
   var colorSet = darkState ? "darkSet" : "lightSet";
 
-  var xVal = 1,
-    yVal = 1;
+  var xVal = 1;
+  var yVal = 1;
   var dps = [];
 
   for (var i = 0; i < stockData.length; i++) {
@@ -34,7 +39,7 @@ export const Chart = ({ stockData, darkState }) => {
     colorSet: colorSet,
     animationEnabled: true,
     // exportEnabled: true,
-    backgroundColor: "",
+    backgroundColor: bgColor,
     theme: bgTheme,
     charts: [
       {
