@@ -4,14 +4,14 @@ var merge = require("lodash.merge");
 
 // Calling Tiingo API
 const symbol = "aapl";
-const columnsRequired = ["close"];
+const columnsRequired = ["open"];
 var jsonResponse = "";
 var stockData = "";
 var requestOptions = {
   url:
     "https://api.tiingo.com/tiingo/daily/" +
     symbol +
-    "/prices?startDate=2009-01-02&" +
+    "/prices?startDate=2008-01-01&" +
     `columns=${columnsRequired}`,
   headers: {
     "Content-Type": "application/json",

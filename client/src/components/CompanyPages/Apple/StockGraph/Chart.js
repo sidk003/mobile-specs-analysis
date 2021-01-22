@@ -18,7 +18,7 @@ export const Chart = ({ stockData, darkState }) => {
   var dps = [];
 
   for (var i = 0; i < stockData.length; i++) {
-    yVal = stockData[i].close;
+    yVal = stockData[i].open;
     dps.push({ x: xVal, y: yVal });
     xVal++;
   }
