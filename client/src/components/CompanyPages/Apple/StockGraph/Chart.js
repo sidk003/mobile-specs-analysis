@@ -3,16 +3,13 @@ import CanvasJSReact from "../../../../canvasjs.stock.react";
 var CanvasJSStockChart = CanvasJSReact.CanvasJSStockChart;
 const CanvasJS = CanvasJSReact.CanvasJS;
 
-CanvasJS.addColorSet("darkSet", ["#ff471a"]);
-CanvasJS.addColorSet("lightSet", ["#005ce6"]);
+CanvasJS.addColorSet("darkSet", ["#BB86FC"]);
+CanvasJS.addColorSet("lightSet", ["#005CE6"]);
 
 export const Chart = ({ stockData, darkState }) => {
   const darkTheme = "dark2";
   const lightTheme = "light2";
-  const white = "#FFFFFF";
-  const grey = "#262626";
 
-  var bgColor = darkState ? grey : white;
   var bgTheme = darkState ? darkTheme : lightTheme;
   var colorSet = darkState ? "darkSet" : "lightSet";
 
@@ -28,8 +25,9 @@ export const Chart = ({ stockData, darkState }) => {
   if (stockData[0] !== undefined) {
     var date = stockData[stockData.length - 1].date;
     var parsedDate = new Date(date);
-    console.log("DAte Str: ", typeof parsedDate);
+    // console.log("DAte Str: ", parsedDate);
   }
+  console.log("Yesterday's closing price: ", stockData[stockData.length - 1]);
 
   const options = {
     title: {
@@ -39,7 +37,7 @@ export const Chart = ({ stockData, darkState }) => {
     colorSet: colorSet,
     animationEnabled: true,
     // exportEnabled: true,
-    backgroundColor: bgColor,
+    backgroundColor: "",
     theme: bgTheme,
     charts: [
       {
@@ -65,7 +63,7 @@ export const Chart = ({ stockData, darkState }) => {
     rangeSelector: {
       inputFields: {
         startValue: 3000,
-        endValue: 3032,
+        endValue: stockData.length - 1,
         valueFormatString: "###0",
       },
 

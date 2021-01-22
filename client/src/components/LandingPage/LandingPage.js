@@ -7,7 +7,7 @@ import { Oneplus } from "../CompanyPages/Oneplus/Oneplus";
 import { Samsung } from "../CompanyPages/Samsung/Samsung";
 import { Xiaomi } from "../CompanyPages/Xiaomi/Xiaomi";
 import { CssBaseline, Box, Container } from "@material-ui/core";
-import { lightBlue, deepPurple, red } from "@material-ui/core/colors";
+import { lightBlue } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Footer from "../Footer/Footer";
 import { About } from "./About/About";
@@ -16,16 +16,30 @@ import { Sidebar } from "../Sidebar/Sidebar";
 import useStyles from "./Styles";
 
 export default function LandingPage() {
+  // Add about ML we using on about-us page
   const [open, setOpen] = useState(true);
   const [darkState, setDarkState] = useState(true);
+
+  const bgDark = "#121212";
+  const bgLight = "#FAFAFA";
+  const cardDark = "#1A1A1A";
+  const cardLight = "#FFF";
+  const headDark = "#3700B3";
+
   const palletType = darkState ? "dark" : "light";
-  const mainPrimaryColor = darkState ? red[800] : lightBlue[700];
-  const mainSecondaryColor = darkState ? deepPurple[100] : deepPurple[100];
+  const bgTheme = darkState ? bgDark : bgLight;
+  const cardColor = darkState ? cardDark : cardLight;
+  const mainPrimaryColor = darkState ? headDark : lightBlue[700];
+  const mainSecondaryColor = darkState ? "#03DAC5" : "#03DAC5";
   const darkTheme = createMuiTheme({
     palette: {
       type: palletType,
       primary: {
         main: mainPrimaryColor,
+      },
+      background: {
+        default: bgTheme,
+        paper: cardColor,
       },
       secondary: {
         main: mainSecondaryColor,

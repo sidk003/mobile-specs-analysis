@@ -4,12 +4,13 @@ import { CanvasJSChart } from "canvasjs-react-charts";
 export const Chart = ({ bargraph, darkState }) => {
   const darkTheme = "dark2";
   const lightTheme = "light2";
+  const purple = "#BB86FC";
+  const blue = "#005CE6";
   const black = "#000000";
   const white = "#FFFFFF";
-  const grey = "#262626";
 
-  var bgColor = darkState ? grey : white;
   var bgTheme = darkState ? darkTheme : lightTheme;
+  var colorSet = darkState ? purple : blue;
   var fontColor = darkState ? white : black;
 
   var year1 = 0;
@@ -44,6 +45,7 @@ export const Chart = ({ bargraph, darkState }) => {
     animationEnabled: true,
     // exportEnabled: true,
     theme: bgTheme,
+
     title: {
       text:
         "Unit Sales of the Apple iPhone worldwide from 2007 to 2018 (in millions)",
@@ -52,10 +54,12 @@ export const Chart = ({ bargraph, darkState }) => {
     axisY: {
       includeZero: true,
     },
-    backgroundColor: bgColor,
+
+    backgroundColor: "",
     data: [
       {
         type: "column",
+        color: colorSet,
         indexLabel: "{y}",
         indexLabelFontColor: fontColor,
         indexLabelPlacement: "outside",
