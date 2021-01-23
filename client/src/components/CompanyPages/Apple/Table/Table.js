@@ -11,6 +11,12 @@ import {
 import EnhancedTableHead from "./EnhancedTableHead";
 import useStyles from "./Styles";
 
+const extractDate = (dateTime) => {
+  var date = dateTime;
+  if (dateTime !== undefined) date = date.split("T")[0];
+  return date;
+};
+
 const createData = (name, release, price) => {
   return { name, release, price };
 };
@@ -80,19 +86,19 @@ export const PhoneTable = ({ table }) => {
   }
 
   rows = [
-    createData(phone1.name, phone1.date, phone1.price),
-    createData(phone2.name, phone2.date, phone2.price),
-    createData(phone3.name, phone3.date, phone3.price),
-    createData(phone4.name, phone4.date, phone4.price),
-    createData(phone5.name, phone5.date, phone5.price),
-    createData(phone6.name, phone6.date, phone6.price),
-    createData(phone7.name, phone7.date, phone7.price),
-    createData(phone8.name, phone8.date, phone8.price),
-    createData(phone9.name, phone9.date, phone9.price),
-    createData(phone10.name, phone10.date, phone10.price),
-    createData(phone11.name, phone11.date, phone11.price),
-    createData(phone12.name, phone12.date, phone12.price),
-    createData(phone13.name, phone13.date, phone13.price),
+    createData(phone1.name, extractDate(phone1.date), phone1.price),
+    createData(phone2.name, extractDate(phone2.date), phone2.price),
+    createData(phone3.name, extractDate(phone3.date), phone3.price),
+    createData(phone4.name, extractDate(phone4.date), phone4.price),
+    createData(phone5.name, extractDate(phone5.date), phone5.price),
+    createData(phone6.name, extractDate(phone6.date), phone6.price),
+    createData(phone7.name, extractDate(phone7.date), phone7.price),
+    createData(phone8.name, extractDate(phone8.date), phone8.price),
+    createData(phone9.name, extractDate(phone9.date), phone9.price),
+    createData(phone10.name, extractDate(phone10.date), phone10.price),
+    createData(phone11.name, extractDate(phone11.date), phone11.price),
+    createData(phone12.name, extractDate(phone12.date), phone12.price),
+    createData(phone13.name, extractDate(phone13.date), phone13.price),
   ];
 
   const handleRequestSort = (event, property) => {
