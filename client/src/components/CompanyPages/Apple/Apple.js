@@ -22,17 +22,17 @@ export const Apple = ({ darkState }) => {
   var companyName = "";
   var tagline = "";
   var imageLinks = "";
-  var table = "";
   var stockData = "";
   var bargraph = "";
+  var table = "";
 
   if (apple !== undefined && apple.stockData !== undefined) {
     companyName = apple.title;
     tagline = apple.tagline;
     imageLinks = apple.links;
-    table = apple.table;
     stockData = apple.stockData;
     bargraph = apple.bargraph;
+    table = apple.table;
   }
 
   return (
@@ -43,7 +43,7 @@ export const Apple = ({ darkState }) => {
       </Typography>
       <AppleCarousel imageLinks={imageLinks} />
       <Stockgraph stockData={stockData} darkState={darkState} />
-      <Bargraph bargraph={bargraph} darkState={darkState} />
+      <Bargraph darkState={darkState} bargraph={bargraph} />
       <PhoneTable table={table} />
       <Divider className={classes.divider} />
       <Typography className={classes.header}>iPhone Releases</Typography>
