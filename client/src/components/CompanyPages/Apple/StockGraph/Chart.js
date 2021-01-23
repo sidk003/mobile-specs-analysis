@@ -19,15 +19,9 @@ export const Chart = ({ stockData, darkState }) => {
 
   for (var i = 0; i < stockData.length; i++) {
     yVal = stockData[i].open;
+    xVal = new Date(stockData[i].date);
     dps.push({ x: xVal, y: yVal });
-    xVal++;
   }
-  if (stockData[0] !== undefined) {
-    var date = stockData[stockData.length - 1].date;
-    var parsedDate = new Date(date);
-    // console.log("DAte Str: ", parsedDate);
-  }
-  console.log("Yesterday's closing price: ", stockData[stockData.length - 1]);
 
   const options = {
     title: {
@@ -36,58 +30,27 @@ export const Chart = ({ stockData, darkState }) => {
     },
     colorSet: colorSet,
     animationEnabled: true,
-    // exportEnabled: true,
     backgroundColor: "",
     theme: bgTheme,
     charts: [
       {
-        axisX: {
-          crosshair: {
-            enabled: true,
-            snapToDataPoint: true,
-          },
-        },
         axisY: {
-          crosshair: {
-            enabled: true,
-          },
+          prefix: "$",
         },
         data: [
           {
             type: "spline",
+            yValueFormatString: "$#,###.##",
             dataPoints: dps,
           },
         ],
       },
     ],
-    rangeSelector: {
-      inputFields: {
-        startValue: 3000,
-        endValue: stockData.length - 1,
-        valueFormatString: "###0",
+    navigator: {
+      slider: {
+        minimum: new Date(2018, 0x2, 0x1),
+        maximum: new Date(2018, 0x8, 0x1),
       },
-
-      buttons: [
-        {
-          label: "1 month",
-          range: 30,
-          rangeType: "number",
-        },
-        {
-          label: "1 year",
-          range: 365,
-          rangeType: "number",
-        },
-        {
-          label: "10 Years",
-          range: 3650,
-          rangeType: "number",
-        },
-        {
-          label: "All",
-          rangeType: "all",
-        },
-      ],
     },
   };
   const containerProps = {
