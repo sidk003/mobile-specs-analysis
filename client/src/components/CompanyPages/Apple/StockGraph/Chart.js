@@ -3,7 +3,7 @@ import CanvasJSReact from "../../../../canvasjs.stock.react";
 var CanvasJSStockChart = CanvasJSReact.CanvasJSStockChart;
 const CanvasJS = CanvasJSReact.CanvasJS;
 
-CanvasJS.addColorSet("darkSet", ["#BB86FC"]);
+CanvasJS.addColorSet("darkSet", ["#ec4646"]);
 CanvasJS.addColorSet("lightSet", ["#005CE6"]);
 
 export const Chart = ({ stockData, darkState }) => {

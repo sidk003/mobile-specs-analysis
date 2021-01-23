@@ -4,13 +4,13 @@ import { CanvasJSChart } from "canvasjs-react-charts";
 export const Chart = ({ bargraph, darkState }) => {
   const darkTheme = "dark2";
   const lightTheme = "light2";
-  const purple = "#BB86FC";
-  const blue = "#005CE6";
+  const barColorDark = "#EC4646";
+  const barColorLight = "#005CE6";
   const black = "#000000";
   const white = "#FFFFFF";
 
   var bgTheme = darkState ? darkTheme : lightTheme;
-  var colorSet = darkState ? purple : blue;
+  var colorSet = darkState ? barColorDark : barColorLight;
   var fontColor = darkState ? white : black;
 
   var year1 = 0;

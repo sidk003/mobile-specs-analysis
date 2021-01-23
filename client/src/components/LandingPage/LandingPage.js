@@ -24,7 +24,7 @@ export default function LandingPage() {
   const bgLight = "#FAFAFA";
   const cardDark = "#1A1A1A";
   const cardLight = "#FFF";
-  const headDark = "#3700B3";
+  const headDark = "#C91818";
 
   const palletType = darkState ? "dark" : "light";
   const bgTheme = darkState ? bgDark : bgLight;
