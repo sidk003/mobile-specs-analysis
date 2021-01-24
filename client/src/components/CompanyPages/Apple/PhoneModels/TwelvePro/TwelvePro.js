@@ -3,15 +3,15 @@ import { Typography } from "@material-ui/core";
 import { Carousel } from "./Carousel/Carousel";
 import useStyles from "./Styles";
 
-export const TwelveProMax = ({ twelvepromaxContent }) => {
+export const TwelvePro = ({ twelveproContent }) => {
   const classes = useStyles();
 
   var title = "";
   var imageLinks = "";
 
-  if (twelvepromaxContent !== undefined) {
-    title = twelvepromaxContent.title;
-    imageLinks = twelvepromaxContent.carousel;
+  if (twelveproContent !== undefined) {
+    title = twelveproContent.title;
+    imageLinks = twelveproContent.carousel;
   }
 
   return (

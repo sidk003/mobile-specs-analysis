@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Table,
   TableBody,
@@ -47,12 +47,12 @@ const stableSort = (array, comparator) => {
   return stabilizedThis.map((el) => el[0]);
 };
 
-export const PhoneTable = ({ table }) => {
+export const PhoneTable = ({ table, getComponentName }) => {
   const classes = useStyles();
-  const [order, setOrder] = React.useState("asc");
-  const [orderBy, setOrderBy] = React.useState("release");
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [order, setOrder] = useState("asc");
+  const [orderBy, setOrderBy] = useState("release");
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(5);
 
   var rows = [];
   var name = "";
@@ -68,6 +68,10 @@ export const PhoneTable = ({ table }) => {
       rows.push(createData(name, date, price));
     }
   }
+
+  const handleClick = (rowName) => {
+    getComponentName(rowName);
+  };
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
@@ -110,7 +114,12 @@ export const PhoneTable = ({ table }) => {
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
-                    <TableRow hover tabIndex={-1} key={row.name}>
+                    <TableRow
+                      hover
+                      tabIndex={-1}
+                      key={row.name}
+                      onClick={() => handleClick(row.name)}
+                    >
                       <TableCell></TableCell>
                       <TableCell
                         component="th"

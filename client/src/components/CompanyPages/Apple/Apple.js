@@ -6,6 +6,7 @@ import { Stockgraph } from "./StockGraph/StockGraph";
 import { PhoneTable } from "./Table/Table";
 import { Bargraph } from "./BarGraph/Bargraph";
 import { TwelveProMax } from "./PhoneModels/TwelveProMax/TwelveProMax";
+import { TwelvePro } from "./PhoneModels/TwelvePro/TwelvePro";
 import useStyles from "./Styles";
 
 export const Apple = ({ darkState }) => {
@@ -19,12 +20,18 @@ export const Apple = ({ darkState }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const getComponentName = (name) => {
+    alert(`Henlo to ${name}`);
+  };
+
   var companyName = "";
   var tagline = "";
   var imageLinks = "";
   var stockData = "";
   var bargraph = "";
   var table = "";
+  var twelvepromaxContent = "";
+  var twelveproContent = "";
 
   if (apple !== undefined && apple.stockData !== undefined) {
     companyName = apple.title;
@@ -33,6 +40,8 @@ export const Apple = ({ darkState }) => {
     stockData = apple.stockData;
     bargraph = apple.bargraph;
     table = apple.table;
+    twelvepromaxContent = apple.phonemodels.twelvepromax;
+    twelveproContent = apple.phonemodels.twelvepro;
   }
 
   return (
@@ -44,11 +53,12 @@ export const Apple = ({ darkState }) => {
       <AppleCarousel imageLinks={imageLinks} />
       <Stockgraph stockData={stockData} darkState={darkState} />
       <Bargraph darkState={darkState} bargraph={bargraph} />
-      <PhoneTable table={table} />
+      <PhoneTable table={table} getComponentName={getComponentName} />
       <Divider className={classes.divider} />
       <Typography className={classes.header}>iPhone Releases</Typography>
       <Divider className={classes.divider} />
-      <TwelveProMax />
+      <TwelveProMax twelvepromaxContent={twelvepromaxContent} />
+      <TwelvePro twelveproContent={twelveproContent} />
     </div>
   );
 };
