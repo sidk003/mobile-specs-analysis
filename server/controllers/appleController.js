@@ -1,6 +1,5 @@
 const Apple = require("../models/Apple");
 var request = require("request");
-var merge = require("lodash.merge");
 
 // Calling Tiingo API
 const symbol = "aapl";
@@ -22,7 +21,6 @@ var requestOptions = {
 request(requestOptions, function (error, response, body) {
   stockData = JSON.parse(body);
   jsonResponse = { stockData };
-  // console.log("data received: ", jsonResponse);
 });
 
 // @desc    Get data of Apple

@@ -8,7 +8,6 @@ const AppleSchema = new mongoose.Schema({
     image2: { type: String, required: true },
     image3: { type: String, required: true },
   },
-
   bargraph: [],
   table: [],
 });
