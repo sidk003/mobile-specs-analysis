@@ -17,7 +17,7 @@ import useStyles from "./Styles";
 
 export default function LandingPage() {
   // Add about ML we using on about-us page
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [darkState, setDarkState] = useState(true);
 
   const bgDark = "#121212";
