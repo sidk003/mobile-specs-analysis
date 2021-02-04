@@ -21,6 +21,7 @@ export default makeStyles((theme) => ({
     flexGrow: 1,
     height: "100vh",
     overflowX: "hidden",
+    backgroundImage: `url(${"https://cdn.wallpapersafari.com/69/10/CEokAi.jpg"})`,
   },
   container: {
     paddingTop: theme.spacing(4),
