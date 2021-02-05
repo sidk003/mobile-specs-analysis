@@ -12,7 +12,6 @@ export default makeStyles((theme) => ({
   },
 
   drawerPaper: {
-    zIndex: 1,
     position: "relative",
     whiteSpace: "nowrap",
     width: drawerWidth,
@@ -20,10 +19,8 @@ export default makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    // backgroundImage: "url(" + drawerImage + ")",
   },
   drawerPaperClose: {
-    zIndex: -1,
     overflowX: "hidden",
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,

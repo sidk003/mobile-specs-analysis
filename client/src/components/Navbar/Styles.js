@@ -7,8 +7,7 @@ export default makeStyles((theme) => ({
     paddingRight: 24,
   },
   appBar: {
-    // zIndex: theme.zIndex.drawer + 1,
-    // zIndex: 1,
+    zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -16,7 +15,8 @@ export default makeStyles((theme) => ({
   },
   appBarShift: {
     marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
+    // width: `calc(100% - ${drawerWidth}px)`,
+    width: 1000,
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
