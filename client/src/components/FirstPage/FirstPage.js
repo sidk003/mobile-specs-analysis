@@ -53,7 +53,6 @@ export const FirstPage = () => {
   };
 
   const handleDrawerOpen = () => {
-    alert("First Page being called");
     setOpen(true);
   };
   const handleDrawerClose = () => {

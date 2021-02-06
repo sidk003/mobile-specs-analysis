@@ -25,7 +25,7 @@ export const Navbar = ({
           color="inherit"
           aria-label="open drawer"
           onClick={handleDrawerOpen}
-          className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
+          className={(classes.menuButton, open)}
         >
           <MenuIcon />
         </IconButton>
