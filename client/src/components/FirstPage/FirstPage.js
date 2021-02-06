@@ -11,13 +11,13 @@ import { lightBlue } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 // import Footer from "../Footer/Footer";
 // import { About } from "./About/About";
-// import { Navbar } from "../Navbar/Navbar";
+import { Navbar } from "../Navbar/Navbar";
 // import { Sidebar } from "../Sidebar/Sidebar";
 import useStyles from "./Styles";
 
 export const FirstPage = () => {
   // Add about ML we using on about-us page
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [darkState, setDarkState] = useState(true);
 
   const bgDark = "#121212";
@@ -60,9 +60,20 @@ export const FirstPage = () => {
   };
 
   return (
-    <div>Henlo deployment</div>
+    <Router>
+      <ThemeProvider theme={darkTheme}>
+        <div className={classes.root}>
+          <CssBaseline />
+          <Navbar
+            open={open}
+            handleDrawerOpen={handleDrawerOpen}
+            darkState={darkState}
+            handleThemeChange={handleThemeChange}
+          />
+        </div>
+      </ThemeProvider>
+    </Router>
     // <ThemeProvider theme={darkTheme}>
-    //   <Router>
     //     <div className={classes.root}>
     //       <CssBaseline />
     //       <Navbar
@@ -93,7 +104,7 @@ export const FirstPage = () => {
     //         </Container>
     //       </main>
     //     </div>
-    //   </Router>
+
     // </ThemeProvider>
   );
 };
