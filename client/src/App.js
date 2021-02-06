@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import LandingPage from "./components/LandingPage/LandingPage";
+// import { FirstPage } from "./components/FirstPage/FirstPage";
 import { GlobalProvider } from "./context/GlobalState";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <>
       <GlobalProvider>
         <LandingPage />
+        {/* <FirstPage /> */}
       </GlobalProvider>
     </>
   );

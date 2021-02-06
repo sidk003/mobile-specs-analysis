@@ -60,16 +60,16 @@ export default function LandingPage() {
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <Router>
+    <Router>
+      <ThemeProvider theme={darkTheme}>
         <div className={classes.root}>
           <CssBaseline />
-          {/* <Navbar
+          <Navbar
             open={open}
             handleDrawerOpen={handleDrawerOpen}
             darkState={darkState}
             handleThemeChange={handleThemeChange}
-          /> */}
+          />
           <Sidebar open={open} handleDrawerClose={handleDrawerClose} />
           <main className={classes.content}>
             <div className={classes.appBarSpacer} />
@@ -92,7 +92,7 @@ export default function LandingPage() {
             </Container>
           </main>
         </div>
-      </Router>
-    </ThemeProvider>
+      </ThemeProvider>
+    </Router>
   );
 }
