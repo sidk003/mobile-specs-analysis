@@ -64,12 +64,12 @@ export default function LandingPage() {
       <Router>
         <div className={classes.root}>
           <CssBaseline />
-          <Navbar
+          {/* <Navbar
             open={open}
             handleDrawerOpen={handleDrawerOpen}
             darkState={darkState}
             handleThemeChange={handleThemeChange}
-          />
+          /> */}
           <Sidebar open={open} handleDrawerClose={handleDrawerClose} />
           <main className={classes.content}>
             <div className={classes.appBarSpacer} />
