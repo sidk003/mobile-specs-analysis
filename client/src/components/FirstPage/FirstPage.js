@@ -11,9 +11,10 @@ import { lightBlue } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 // import Footer from "../Footer/Footer";
 // import { About } from "./About/About";
-import { Navbar } from "../Navbar/Navbar";
-import { Appbar } from "../Appbar/Appbar";
+// import { Navbar } from "../Navbar/Navbar";
+// import { Appbar } from "../Appbar/Appbar";
 // import { Sidebar } from "../Sidebar/Sidebar";
+import Main from "./Main.js";
 import useStyles from "./Styles";
 
 export const FirstPage = () => {
@@ -65,7 +66,7 @@ export const FirstPage = () => {
       <ThemeProvider theme={darkTheme}>
         <div className={classes.root}>
           <CssBaseline />
-          <Appbar />
+          <Main />
         </div>
       </ThemeProvider>
     </Router>
