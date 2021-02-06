@@ -12,6 +12,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 // import Footer from "../Footer/Footer";
 // import { About } from "./About/About";
 import { Navbar } from "../Navbar/Navbar";
+import { Appbar } from "../Appbar/Appbar";
 // import { Sidebar } from "../Sidebar/Sidebar";
 import useStyles from "./Styles";
 
@@ -64,12 +65,7 @@ export const FirstPage = () => {
       <ThemeProvider theme={darkTheme}>
         <div className={classes.root}>
           <CssBaseline />
-          <Navbar
-            open={open}
-            handleDrawerOpen={handleDrawerOpen}
-            darkState={darkState}
-            handleThemeChange={handleThemeChange}
-          />
+          <Appbar />
         </div>
       </ThemeProvider>
     </Router>
