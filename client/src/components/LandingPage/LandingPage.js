@@ -11,16 +11,11 @@ import { lightBlue } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Footer from "../Footer/Footer";
 import { About } from "../LandingPage/About/About";
-// import { About } from "./About/About";
 import { Navbar } from "../Navbar/Navbar";
-// import { Appbar } from "../Appbar/Appbar";
-// import { Sidebar } from "../Sidebar/Sidebar";
-// import { Main } from "./Main.js";
 import useStyles from "./Styles";
 
 export const LandingPage = () => {
   // Add about ML we using on about-us page
-  // const [open, setOpen] = useState(false);
   const [darkState, setDarkState] = useState(true);
 
   const bgDark = "#121212";
@@ -55,13 +50,6 @@ export const LandingPage = () => {
     setDarkState(!darkState);
   };
 
-  // const handleDrawerOpen = () => {
-  //   setOpen(true);
-  // };
-  // const handleDrawerClose = () => {
-  //   setOpen(false);
-  // };
-
   return (
     <Router>
       <ThemeProvider theme={darkTheme}>
@@ -91,39 +79,5 @@ export const LandingPage = () => {
         </div>
       </ThemeProvider>
     </Router>
-    // {/* </Router> */}
-    // <ThemeProvider theme={darkTheme}>
-    //     <div className={classes.root}>
-    //       <CssBaseline />
-    //       <Navbar
-    //         open={open}
-    //         handleDrawerOpen={handleDrawerOpen}
-    //         darkState={darkState}
-    //         handleThemeChange={handleThemeChange}
-    //       />
-    //       <Sidebar open={open} handleDrawerClose={handleDrawerClose} />
-    // <main className={classes.content}>
-    //   <div className={classes.appBarSpacer} />
-    //   <Container maxWidth="md" className={classes.container}>
-    //     <Switch>
-    //       <Route exact path="/" component={About} />
-    //       <Route
-    //         path="/apple"
-    //         render={() => <Apple darkState={darkState} />}
-    //       />
-    //       <Route path="/google" component={Google} />
-    //       <Route path="/huawei" component={Huawei} />
-    //       <Route path="/oneplus" component={Oneplus} />
-    //       <Route path="/samsung" component={Samsung} />
-    //       <Route path="/xiaomi" component={Xiaomi} />
-    //     </Switch>
-    //     <Box pt={4}>
-    //       <Footer />
-    //     </Box>
-    //   </Container>
-    // </main>
-    //     </div>
-
-    // </ThemeProvider>
   );
 };
