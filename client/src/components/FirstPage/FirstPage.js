@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import { Apple } from "../CompanyPages/Apple/Apple";
-// import { Google } from "../CompanyPages/Google/Google";
-// import { Huawei } from "../CompanyPages/Huawei/Huawei";
-// import { Oneplus } from "../CompanyPages/Oneplus/Oneplus";
-// import { Samsung } from "../CompanyPages/Samsung/Samsung";
-// import { Xiaomi } from "../CompanyPages/Xiaomi/Xiaomi";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Apple } from "../CompanyPages/Apple/Apple";
+import { Google } from "../CompanyPages/Google/Google";
+import { Huawei } from "../CompanyPages/Huawei/Huawei";
+import { Oneplus } from "../CompanyPages/Oneplus/Oneplus";
+import { Samsung } from "../CompanyPages/Samsung/Samsung";
+import { Xiaomi } from "../CompanyPages/Xiaomi/Xiaomi";
 import { CssBaseline, Box, Container } from "@material-ui/core";
 import { lightBlue } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-// import Footer from "../Footer/Footer";
+import Footer from "../Footer/Footer";
+import { About } from "../LandingPage/About/About";
 // import { About } from "./About/About";
 // import { Navbar } from "../Navbar/Navbar";
 // import { Appbar } from "../Appbar/Appbar";
@@ -62,14 +63,34 @@ export const FirstPage = () => {
   };
 
   return (
-    // <Router>
-    <ThemeProvider theme={darkTheme}>
-      <div className={classes.root}>
-        <CssBaseline />
-        <Main />
-      </div>
-    </ThemeProvider>
-    // {/* </Router> */}
+    <Router>
+      <ThemeProvider theme={darkTheme}>
+        <div className={classes.root}>
+          <CssBaseline />
+          <Main />
+          <main className={classes.content}>
+            <div className={classes.appBarSpacer} />
+            <Container maxWidth="md" className={classes.container}>
+              <Switch>
+                <Route exact path="/" component={About} />
+                <Route
+                  path="/apple"
+                  render={() => <Apple darkState={darkState} />}
+                />
+                <Route path="/google" component={Google} />
+                <Route path="/huawei" component={Huawei} />
+                <Route path="/oneplus" component={Oneplus} />
+                <Route path="/samsung" component={Samsung} />
+                <Route path="/xiaomi" component={Xiaomi} />
+              </Switch>
+              <Box pt={4}>
+                <Footer />
+              </Box>
+            </Container>
+          </main>
+        </div>
+      </ThemeProvider>
+    </Router>
     // <ThemeProvider theme={darkTheme}>
     //     <div className={classes.root}>
     //       <CssBaseline />
@@ -80,26 +101,26 @@ export const FirstPage = () => {
     //         handleThemeChange={handleThemeChange}
     //       />
     //       <Sidebar open={open} handleDrawerClose={handleDrawerClose} />
-    //       <main className={classes.content}>
-    //         <div className={classes.appBarSpacer} />
-    //         <Container maxWidth="md" className={classes.container}>
-    //           <Switch>
-    //             <Route exact path="/" component={About} />
-    //             <Route
-    //               path="/apple"
-    //               render={() => <Apple darkState={darkState} />}
-    //             />
-    //             <Route path="/google" component={Google} />
-    //             <Route path="/huawei" component={Huawei} />
-    //             <Route path="/oneplus" component={Oneplus} />
-    //             <Route path="/samsung" component={Samsung} />
-    //             <Route path="/xiaomi" component={Xiaomi} />
-    //           </Switch>
-    //           <Box pt={4}>
-    //             <Footer />
-    //           </Box>
-    //         </Container>
-    //       </main>
+    // <main className={classes.content}>
+    //   <div className={classes.appBarSpacer} />
+    //   <Container maxWidth="md" className={classes.container}>
+    //     <Switch>
+    //       <Route exact path="/" component={About} />
+    //       <Route
+    //         path="/apple"
+    //         render={() => <Apple darkState={darkState} />}
+    //       />
+    //       <Route path="/google" component={Google} />
+    //       <Route path="/huawei" component={Huawei} />
+    //       <Route path="/oneplus" component={Oneplus} />
+    //       <Route path="/samsung" component={Samsung} />
+    //       <Route path="/xiaomi" component={Xiaomi} />
+    //     </Switch>
+    //     <Box pt={4}>
+    //       <Footer />
+    //     </Box>
+    //   </Container>
+    // </main>
     //     </div>
 
     // </ThemeProvider>

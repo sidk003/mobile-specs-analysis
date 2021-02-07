@@ -186,7 +186,7 @@ class MiniDrawer extends React.Component {
             </div>
           </Toolbar>
         </AppBar>
-        {/* <Drawer
+        <Drawer
           variant="permanent"
           className={classNames(classes.drawer, {
             [classes.drawerOpen]: this.state.open,
@@ -222,7 +222,7 @@ class MiniDrawer extends React.Component {
               </ListItem>
             ))}
           </List>
-        </Drawer> */}
+        </Drawer>
         {/* <main className={classes.content}>
           <div className={classes.toolbar} />
 
