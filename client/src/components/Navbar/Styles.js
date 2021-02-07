@@ -91,7 +91,6 @@ export default makeStyles((theme) => ({
     padding: "0 8px",
     ...theme.mixins.toolbar,
   },
-
   grow: {
     flexGrow: 1,
   },

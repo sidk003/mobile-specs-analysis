@@ -20,7 +20,7 @@ import useStyles from "./Styles";
 
 export const LandingPage = () => {
   // Add about ML we using on about-us page
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const [darkState, setDarkState] = useState(true);
 
   const bgDark = "#121212";
@@ -55,12 +55,12 @@ export const LandingPage = () => {
     setDarkState(!darkState);
   };
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  // const handleDrawerOpen = () => {
+  //   setOpen(true);
+  // };
+  // const handleDrawerClose = () => {
+  //   setOpen(false);
+  // };
 
   return (
     <Router>
