@@ -19,6 +19,7 @@ export default function LandingPage() {
   // Add about ML we using on about-us page
   const [open, setOpen] = useState(true);
   const [darkState, setDarkState] = useState(true);
+  var anchorEl = null;
 
   const bgDark = "#121212";
   const bgLight = "#FAFAFA";
@@ -53,10 +54,20 @@ export default function LandingPage() {
   };
 
   const handleDrawerOpen = () => {
-    setOpen(true);
+    // setOpen(true);
+    setOpen(!open);
   };
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+
+  const handleMenu = (event) => {
+    // this.setState({ anchorEl: event.currentTarget });
+    anchorEl = event.currentTarget;
+  };
+  const handleClose = () => {
+    // this.setState({ anchorEl: null });
+    anchorEl = null;
   };
 
   return (
@@ -69,6 +80,9 @@ export default function LandingPage() {
             handleDrawerOpen={handleDrawerOpen}
             darkState={darkState}
             handleThemeChange={handleThemeChange}
+            anchorEl={anchorEl}
+            handleMenu={handleMenu}
+            handleClose={handleClose}
           />
           <Sidebar open={open} handleDrawerClose={handleDrawerClose} />
           <main className={classes.content}>

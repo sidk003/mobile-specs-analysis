@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import { Apple } from "../CompanyPages/Apple/Apple";
 // import { Google } from "../CompanyPages/Google/Google";
 // import { Huawei } from "../CompanyPages/Huawei/Huawei";
@@ -62,14 +62,14 @@ export const FirstPage = () => {
   };
 
   return (
-    <Router>
-      <ThemeProvider theme={darkTheme}>
-        <div className={classes.root}>
-          <CssBaseline />
-          <Main />
-        </div>
-      </ThemeProvider>
-    </Router>
+    // <Router>
+    <ThemeProvider theme={darkTheme}>
+      <div className={classes.root}>
+        <CssBaseline />
+        <Main />
+      </div>
+    </ThemeProvider>
+    // {/* </Router> */}
     // <ThemeProvider theme={darkTheme}>
     //     <div className={classes.root}>
     //       <CssBaseline />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
@@ -123,6 +123,7 @@ class MiniDrawer extends React.Component {
     const { classes, theme } = this.props;
     const { anchorEl } = this.state;
     const open = Boolean(anchorEl);
+    // const [open, setOpen] = useState(false);
     return (
       <div className={classes.root}>
         <CssBaseline />
@@ -185,7 +186,7 @@ class MiniDrawer extends React.Component {
             </div>
           </Toolbar>
         </AppBar>
-        <Drawer
+        {/* <Drawer
           variant="permanent"
           className={classNames(classes.drawer, {
             [classes.drawerOpen]: this.state.open,
@@ -221,8 +222,8 @@ class MiniDrawer extends React.Component {
               </ListItem>
             ))}
           </List>
-        </Drawer>
-        <main className={classes.content}>
+        </Drawer> */}
+        {/* <main className={classes.content}>
           <div className={classes.toolbar} />
 
           <Typography paragraph>
@@ -241,7 +242,7 @@ class MiniDrawer extends React.Component {
             ultrices sagittis orci a.
           </Typography>
           <Typography paragraph>foo</Typography>
-        </main>
+        </main> */}
       </div>
     );
   }
