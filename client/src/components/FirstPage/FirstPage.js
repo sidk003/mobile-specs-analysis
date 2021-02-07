@@ -67,7 +67,7 @@ export const FirstPage = () => {
       <ThemeProvider theme={darkTheme}>
         <div className={classes.root}>
           <CssBaseline />
-          <Main />
+          <Main darkState={darkState} handleThemeChange={handleThemeChange} />
           <main className={classes.content}>
             <div className={classes.appBarSpacer} />
             <Container maxWidth="md" className={classes.container}>

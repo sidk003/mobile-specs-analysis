@@ -19,6 +19,8 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import Brightness5Icon from "@material-ui/icons/Brightness5";
+import NightsStayIcon from "@material-ui/icons/NightsStay";
 import useStyles from "./Styles";
 
 // const drawerWidth = 220;
@@ -99,7 +101,7 @@ import useStyles from "./Styles";
 //   },
 // });
 
-export const Main = () => {
+export const Main = ({ darkState, handleThemeChange }) => {
   const classes = useStyles();
   const [open, setOpen] = useState(true);
   // var anchorEl = null;
@@ -156,18 +158,21 @@ export const Main = () => {
             className={classes.grow}
             noWrap
           >
-            Mini variant menu++
+            Mobile Specs Analysis
           </Typography>
           <div>
-            <IconButton
+            <IconButton onClick={handleThemeChange}>
+              {darkState ? <Brightness5Icon /> : <NightsStayIcon />}
+            </IconButton>
+            {/* <IconButton
               aria-owns={BoolOpen ? "menu-appbar" : undefined}
               aria-haspopup="true"
               onClick={handleMenu}
               color="inherit"
             >
               <AccountCircle />
-            </IconButton>
-            <Menu
+            </IconButton> */}
+            {/* <Menu
               id="menu-appbar"
               anchorEl={anchorEl}
               anchorOrigin={{
@@ -183,7 +188,7 @@ export const Main = () => {
             >
               <MenuItem onClick={handleClose}>Profile</MenuItem>
               <MenuItem onClick={handleClose}>My account</MenuItem>
-            </Menu>
+            </Menu> */}
           </div>
         </Toolbar>
       </AppBar>

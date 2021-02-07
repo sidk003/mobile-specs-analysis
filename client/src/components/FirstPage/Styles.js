@@ -6,6 +6,28 @@ export default makeStyles((theme) => ({
   root: {
     display: "flex",
   },
+  "@global": {
+    "*::-webkit-scrollbar": {
+      width: "0.95em",
+    },
+    "*::-webkit-scrollbar-track": {
+      "-webkit-box-shadow": "-5px 0px 13px -4px rgba(0,0,0,0.75)",
+    },
+    "*::-webkit-scrollbar-thumb": {
+      backgroundColor: "rgba(96, 92, 97, 0.57)",
+    },
+  },
+  appBarSpacer: theme.mixins.toolbar,
+  content: {
+    flexGrow: 1,
+    height: "100vh",
+    overflowX: "hidden",
+    // backgroundImage: `url(${"https://cdn.wallpapersafari.com/69/10/CEokAi.jpg"})`,
+  },
+  container: {
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(4),
+  },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
   },
@@ -69,37 +91,8 @@ export default makeStyles((theme) => ({
     padding: "0 8px",
     ...theme.mixins.toolbar,
   },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing.unit * 3,
-  },
+
   grow: {
     flexGrow: 1,
-  },
-  "@global": {
-    "*::-webkit-scrollbar": {
-      width: "0.95em",
-    },
-    "*::-webkit-scrollbar-track": {
-      "-webkit-box-shadow": "-5px 0px 13px -4px rgba(0,0,0,0.75)",
-    },
-    "*::-webkit-scrollbar-thumb": {
-      backgroundColor: "rgba(96, 92, 97, 0.57)",
-    },
-  },
-
-  // root: {
-  //   display: "flex",
-  // },
-  appBarSpacer: theme.mixins.toolbar,
-  content: {
-    flexGrow: 1,
-    height: "100vh",
-    overflowX: "hidden",
-    // backgroundImage: `url(${"https://cdn.wallpapersafari.com/69/10/CEokAi.jpg"})`,
-  },
-  container: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
   },
 }));
