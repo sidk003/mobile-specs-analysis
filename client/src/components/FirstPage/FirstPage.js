@@ -15,7 +15,7 @@ import { About } from "../LandingPage/About/About";
 // import { Navbar } from "../Navbar/Navbar";
 // import { Appbar } from "../Appbar/Appbar";
 // import { Sidebar } from "../Sidebar/Sidebar";
-import Main from "./Main.js";
+import { Main } from "./Main.js";
 import useStyles from "./Styles";
 
 export const FirstPage = () => {
