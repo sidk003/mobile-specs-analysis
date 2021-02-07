@@ -91,38 +91,5 @@ export const FirstPage = () => {
         </div>
       </ThemeProvider>
     </Router>
-    // <ThemeProvider theme={darkTheme}>
-    //     <div className={classes.root}>
-    //       <CssBaseline />
-    //       <Navbar
-    //         open={open}
-    //         handleDrawerOpen={handleDrawerOpen}
-    //         darkState={darkState}
-    //         handleThemeChange={handleThemeChange}
-    //       />
-    //       <Sidebar open={open} handleDrawerClose={handleDrawerClose} />
-    // <main className={classes.content}>
-    //   <div className={classes.appBarSpacer} />
-    //   <Container maxWidth="md" className={classes.container}>
-    //     <Switch>
-    //       <Route exact path="/" component={About} />
-    //       <Route
-    //         path="/apple"
-    //         render={() => <Apple darkState={darkState} />}
-    //       />
-    //       <Route path="/google" component={Google} />
-    //       <Route path="/huawei" component={Huawei} />
-    //       <Route path="/oneplus" component={Oneplus} />
-    //       <Route path="/samsung" component={Samsung} />
-    //       <Route path="/xiaomi" component={Xiaomi} />
-    //     </Switch>
-    //     <Box pt={4}>
-    //       <Footer />
-    //     </Box>
-    //   </Container>
-    // </main>
-    //     </div>
-
-    // </ThemeProvider>
   );
 };
