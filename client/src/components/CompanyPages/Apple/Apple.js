@@ -16,6 +16,7 @@ export const Apple = ({ darkState }) => {
 
   useEffect(() => {
     getApple();
+
     // below code to avoid warning
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

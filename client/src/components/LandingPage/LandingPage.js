@@ -1,6 +1,5 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { GlobalContext } from "../../context/GlobalState";
 import { Apple } from "../CompanyPages/Apple/Apple";
 import { Google } from "../CompanyPages/Google/Google";
 import { Huawei } from "../CompanyPages/Huawei/Huawei";
@@ -18,32 +17,21 @@ import useStyles from "./Styles";
 export const LandingPage = () => {
   // Add about ML we using on about-us page
   const [darkState, setDarkState] = useState(true);
-  const { about, getAbout } = useContext(GlobalContext);
 
-  useEffect(() => {
-    getAbout();
-    // below code to avoid warning
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  var bgImageLight = "";
-  var bgImageDark = "";
-
-  if (about !== undefined) {
-    bgImageLight = `url(${about.bgImageLight})`;
-    bgImageDark = `url(${about.bgImageDark})`;
-  }
+  const bgImageLight = "url(https://i.redd.it/qwd83nc4xxf41.jpg)";
+  const bgImageDark = "url(https://cdn.wallpapersafari.com/69/10/CEokAi.jpg)";
 
   const bgDark = "#121212";
   const bgLight = "#FAFAFA";
   const cardDark = "#1A1A1A";
   const cardLight = "#FFF";
   const headDark = "#C91818";
+  const headLight = "#007FFF";
 
   const palletType = darkState ? "dark" : "light";
   const bgTheme = darkState ? bgDark : bgLight;
   const cardColor = darkState ? cardDark : cardLight;
-  const mainPrimaryColor = darkState ? headDark : lightBlue[700];
+  const mainPrimaryColor = darkState ? headDark : headLight;
   const mainSecondaryColor = darkState ? "#03DAC5" : "#03DAC5";
   const bgImage = darkState ? bgImageDark : bgImageLight;
   const darkTheme = createMuiTheme({
