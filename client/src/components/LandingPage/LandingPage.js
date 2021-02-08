@@ -44,7 +44,8 @@ export const LandingPage = () => {
       },
     },
   });
-  const classes = useStyles();
+  const styleProps = { darkTheme: darkTheme };
+  const classes = useStyles(darkTheme);
 
   const handleThemeChange = () => {
     setDarkState(!darkState);

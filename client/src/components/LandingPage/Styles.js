@@ -1,5 +1,8 @@
 import { makeStyles } from "@material-ui/core/styles";
 
+const bgImageLight = `url(${"https://www.wallpapertip.com/wmimgs/94-948582_light-colorful-background-hd.jpg"})`;
+const bgImageDark = `url(${"https://cdn.wallpapersafari.com/69/10/CEokAi.jpg"})`;
+
 export default makeStyles((theme) => ({
   "@global": {
     "*::-webkit-scrollbar": {
@@ -21,7 +24,8 @@ export default makeStyles((theme) => ({
     flexGrow: 1,
     height: "100vh",
     overflowX: "hidden",
-    // backgroundImage: `url(${"https://cdn.wallpapersafari.com/69/10/CEokAi.jpg"})`,
+    // backgroundImage: (props) => (props.darkTheme ? bgImageDark : bgImageLight),
+    backgroundImage: bgImageDark,
   },
   container: {
     paddingTop: theme.spacing(4),
