@@ -11,6 +11,8 @@ const AboutSchema = new mongoose.Schema({
     samsung: { type: String, required: true },
     xiaomi: { type: String, required: true },
   },
+  bgImageLight: { type: String, required: true },
+  bgImageDark: { type: String, required: true },
 });
 
 module.exports = mongoose.model("About", AboutSchema);

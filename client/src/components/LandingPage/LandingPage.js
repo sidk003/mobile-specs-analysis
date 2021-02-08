@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { GlobalContext } from "../../context/GlobalState";
 import { Apple } from "../CompanyPages/Apple/Apple";
 import { Google } from "../CompanyPages/Google/Google";
 import { Huawei } from "../CompanyPages/Huawei/Huawei";
@@ -17,6 +18,21 @@ import useStyles from "./Styles";
 export const LandingPage = () => {
   // Add about ML we using on about-us page
   const [darkState, setDarkState] = useState(true);
+  const { about, getAbout } = useContext(GlobalContext);
+
+  useEffect(() => {
+    getAbout();
+    // below code to avoid warning
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  var bgImageLight = "";
+  var bgImageDark = "";
+
+  if (about !== undefined) {
+    bgImageLight = `url(${about.bgImageLight})`;
+    bgImageDark = `url(${about.bgImageDark})`;
+  }
 
   const bgDark = "#121212";
   const bgLight = "#FAFAFA";
@@ -29,7 +45,17 @@ export const LandingPage = () => {
   const cardColor = darkState ? cardDark : cardLight;
   const mainPrimaryColor = darkState ? headDark : lightBlue[700];
   const mainSecondaryColor = darkState ? "#03DAC5" : "#03DAC5";
+  const bgImage = darkState ? bgImageDark : bgImageLight;
   const darkTheme = createMuiTheme({
+    overrides: {
+      MuiCssBaseline: {
+        "@global": {
+          body: {
+            backgroundImage: bgImage,
+          },
+        },
+      },
+    },
     palette: {
       type: palletType,
       primary: {
@@ -44,8 +70,8 @@ export const LandingPage = () => {
       },
     },
   });
-  const styleProps = { darkTheme: darkTheme };
-  const classes = useStyles(darkTheme);
+
+  const classes = useStyles();
 
   const handleThemeChange = () => {
     setDarkState(!darkState);

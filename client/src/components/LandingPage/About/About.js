@@ -4,7 +4,7 @@ import { Carousel } from "../Carousel/Carousel";
 import { GlobalContext } from "../../../context/GlobalState";
 import useStyles from "./Styles";
 
-export const About = ({ darkState }) => {
+export const About = () => {
   const classes = useStyles();
   const { about, getAbout } = useContext(GlobalContext);
 

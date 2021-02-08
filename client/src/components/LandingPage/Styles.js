@@ -25,7 +25,7 @@ export default makeStyles((theme) => ({
     height: "100vh",
     overflowX: "hidden",
     // backgroundImage: (props) => (props.darkTheme ? bgImageDark : bgImageLight),
-    backgroundImage: bgImageDark,
+    // backgroundImage: bgImageDark,
   },
   container: {
     paddingTop: theme.spacing(4),
