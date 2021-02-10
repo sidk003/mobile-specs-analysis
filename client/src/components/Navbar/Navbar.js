@@ -10,6 +10,7 @@ import {
   Divider,
   IconButton,
 } from "@material-ui/core";
+import { Searchbar } from "./Searchbar/Searchbar";
 import MenuIcon from "@material-ui/icons/Menu";
 import Brightness5Icon from "@material-ui/icons/Brightness5";
 import NightsStayIcon from "@material-ui/icons/NightsStay";
@@ -59,7 +60,10 @@ export const Navbar = ({ darkState, handleThemeChange }) => {
           >
             Mobile Specs Analysis
           </Typography>
-          <div>
+          <div className={classes.searchbar}>
+            <Searchbar />
+          </div>
+          <div className={classes.themeToggle}>
             <IconButton onClick={handleThemeChange}>
               {darkState ? <Brightness5Icon /> : <NightsStayIcon />}
             </IconButton>

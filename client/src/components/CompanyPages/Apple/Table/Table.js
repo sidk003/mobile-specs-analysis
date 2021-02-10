@@ -46,8 +46,8 @@ const stableSort = (array, comparator) => {
   });
   return stabilizedThis.map((el) => el[0]);
 };
-
-export const PhoneTable = ({ table, getComponentName }) => {
+// GetComponentName
+export const PhoneTable = ({ table }) => {
   const classes = useStyles();
   const [order, setOrder] = useState("asc");
   const [orderBy, setOrderBy] = useState("release");
@@ -70,7 +70,9 @@ export const PhoneTable = ({ table, getComponentName }) => {
   }
 
   const handleClick = (rowName) => {
-    getComponentName(rowName);
+    // GetComponentName(rowName);
+    // alert(`Henlo to ${rowName}`);
+    window.scroll({ y: 500, smooth: true });
   };
 
   const handleRequestSort = (event, property) => {

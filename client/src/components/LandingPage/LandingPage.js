@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Apple } from "../CompanyPages/Apple/Apple";
 import { Google } from "../CompanyPages/Google/Google";
@@ -7,7 +7,6 @@ import { Oneplus } from "../CompanyPages/Oneplus/Oneplus";
 import { Samsung } from "../CompanyPages/Samsung/Samsung";
 import { Xiaomi } from "../CompanyPages/Xiaomi/Xiaomi";
 import { CssBaseline, Box, Container } from "@material-ui/core";
-import { lightBlue } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Footer from "../Footer/Footer";
 import { About } from "../LandingPage/About/About";

@@ -21,9 +21,24 @@ export const Apple = ({ darkState }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const getComponentName = (name) => {
-    alert(`Henlo to ${name}`);
-  };
+  // function GetComponentName(name) {
+  // return name;
+  // alert(`Henlo to ${name}`);
+  // scroll({ y: 500, smooth: true });
+  // var scroll = 500;
+  // switch (name) {
+  //   case "iPhone 12 Pro Max":
+  //     alert("500");
+  //     break;
+  //   case "iPhone 12":
+  //     alert("100");
+  //     break;
+
+  //   default:
+  //     break;
+  // }
+  // window.scrollTo(0, 100);
+  // }
 
   var companyName = "";
   var tagline = "";
@@ -54,7 +69,7 @@ export const Apple = ({ darkState }) => {
       <AppleCarousel imageLinks={imageLinks} />
       <Stockgraph stockData={stockData} darkState={darkState} />
       <Bargraph darkState={darkState} bargraph={bargraph} />
-      <PhoneTable table={table} getComponentName={getComponentName} />
+      <PhoneTable table={table} />
       <Divider className={classes.divider} />
       <Typography className={classes.header}>iPhone Releases</Typography>
       <Divider className={classes.divider} />
@@ -63,3 +78,4 @@ export const Apple = ({ darkState }) => {
     </div>
   );
 };
+// GetComponentName={GetComponentName}

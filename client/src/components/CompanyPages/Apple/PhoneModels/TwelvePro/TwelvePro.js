@@ -15,9 +15,9 @@ export const TwelvePro = ({ twelveproContent }) => {
   }
 
   return (
-    <>
+    <div id="TwelvePro">
       <Typography className={classes.title}>{title}</Typography>
       <Carousel imageLinks={imageLinks} />
-    </>
+    </div>
   );
 };

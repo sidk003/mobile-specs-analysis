@@ -94,4 +94,11 @@ export default makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
   },
+  themeToggle: {
+    marginRight: 15,
+  },
+  searchbar: {
+    width: 300,
+    // marginRight: 500,
+  },
 }));
