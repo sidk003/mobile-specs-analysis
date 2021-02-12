@@ -20,8 +20,6 @@ import useStyles from "./Styles";
 export const Navbar = ({ darkState, handleThemeChange }) => {
   const classes = useStyles();
   const [open, setOpen] = useState(true);
-  var anchorEl = null;
-  const BoolOpen = Boolean(anchorEl);
 
   const handleDrawerOpen = () => {
     setOpen(!open);
@@ -34,7 +32,7 @@ export const Navbar = ({ darkState, handleThemeChange }) => {
         position="fixed"
         className={classes.appBar}
         fooJon={classNames(classes.appBar, {
-          [classes.appBarShift]: BoolOpen,
+          [classes.appBarShift]: open,
         })}
       >
         <Toolbar disableGutters={true}>
@@ -46,7 +44,7 @@ export const Navbar = ({ darkState, handleThemeChange }) => {
           >
             <MenuIcon
               classes={{
-                root: BoolOpen
+                root: open
                   ? classes.menuButtonIconOpen
                   : classes.menuButtonIconClosed,
               }}
