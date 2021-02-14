@@ -6,7 +6,6 @@ import { Stockgraph } from "./StockGraph/StockGraph";
 import { PhoneTable } from "./Table/Table";
 import { Bargraph } from "./BarGraph/Bargraph";
 import TwelveProMax from "./PhoneModels/TwelveProMax/TwelveProMax";
-import TwelvePro from "./PhoneModels/TwelvePro/TwelvePro";
 import useStyles from "./Styles";
 
 export const Apple = ({ darkState }) => {
@@ -73,7 +72,7 @@ export const Apple = ({ darkState }) => {
         twelvepromaxContent={twelvepromaxContent}
         ref={twelveProMaxRef}
       />
-      <TwelvePro twelveproContent={twelveproContent} ref={twelveProRef} />
+      <TwelveProMax twelveproContent={twelveproContent} ref={twelveProRef} />
     </div>
   );
 };

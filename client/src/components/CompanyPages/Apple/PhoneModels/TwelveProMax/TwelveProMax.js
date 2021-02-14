@@ -1,12 +1,14 @@
 import React, { forwardRef } from "react";
 import { Typography } from "@material-ui/core";
 import { Carousel } from "./Carousel/Carousel";
+import { CardComponent } from "./Card/Card";
 import useStyles from "./Styles";
 
 const TwelveProMax = (props, ref) => {
   const classes = useStyles();
 
   const twelvepromaxContent = props.twelvepromaxContent;
+  const twelveproContent = props.twelveproContent;
 
   var title = "";
   var imageLinks = "";
@@ -14,12 +16,18 @@ const TwelveProMax = (props, ref) => {
   if (twelvepromaxContent !== undefined) {
     title = twelvepromaxContent.title;
     imageLinks = twelvepromaxContent.carousel;
+  } else if (twelveproContent !== undefined) {
+    title = twelveproContent.title;
+    imageLinks = twelveproContent.carousel;
   }
 
   return (
     <div ref={ref}>
-      <Typography className={classes.title}>{title}</Typography>
-      <Carousel imageLinks={imageLinks} />
+      <CardComponent
+        className={classes.title}
+        imageLinks={imageLinks}
+        name={title}
+      />
     </div>
   );
 };
