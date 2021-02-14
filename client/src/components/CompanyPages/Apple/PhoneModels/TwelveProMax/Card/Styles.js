@@ -5,7 +5,7 @@ export default makeStyles((theme) => ({
     maxWidth: 900,
     marginTop: 50,
     marginBottom: 100,
-    margin: "auto",
+    marginLeft: 100,
     // transition: "0.3s",
     boxShadow: "0 8px 40px -12px rgba(0,0,0,0.3)",
     "&:hover": {
@@ -20,19 +20,19 @@ export default makeStyles((theme) => ({
     padding: theme.spacing.unit * 3,
   },
   divider: {
-    margin: `${theme.spacing.unit * 3}px 0`,
+    margin: `${theme.spacing.unit * 2}px 0`,
   },
   heading: {
     fontWeight: "bold",
   },
   subheading: {
-    lineHeight: 1.8,
+    marginLeft: 5,
+    fontSize: 14,
+    // color: theme.palette.secondary.main,
   },
-  avatar: {
-    display: "inline-block",
-    border: "2px solid white",
-    "&:not(:first-of-type)": {
-      marginLeft: -theme.spacing.unit,
-    },
+  heading: {
+    fontSize: 36,
+    marginLeft: 15,
+    fontFamily: "serif  ",
   },
 }));

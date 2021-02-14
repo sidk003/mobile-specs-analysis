@@ -26,12 +26,14 @@ export const LandingPage = () => {
   const cardLight = "#FFF";
   const headDark = "#C91818";
   const headLight = "#007FFF";
+  const secondaryDark = "#C91818";
+  const secondaryLight = "#007FFF";
 
   const palletType = darkState ? "dark" : "light";
   const bgTheme = darkState ? bgDark : bgLight;
   const cardColor = darkState ? cardDark : cardLight;
   const mainPrimaryColor = darkState ? headDark : headLight;
-  const mainSecondaryColor = darkState ? "#03DAC5" : "#03DAC5";
+  const mainSecondaryColor = darkState ? secondaryDark : secondaryLight;
   const bgImage = darkState ? bgImageDark : bgImageLight;
   const darkTheme = createMuiTheme({
     overrides: {

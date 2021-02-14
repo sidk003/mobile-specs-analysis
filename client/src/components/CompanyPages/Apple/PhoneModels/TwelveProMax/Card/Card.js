@@ -1,12 +1,15 @@
 import React from "react";
 import {
-  Avatar,
   Card,
   CardMedia,
   CardContent,
   Divider,
   Typography,
+  IconButton,
 } from "@material-ui/core";
+import { Specifications } from "./Specifications/Specifications";
+import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
+import EventIcon from "@material-ui/icons/Event";
 import useStyles from "./Styles";
 
 export const CardComponent = ({ imageLinks, name }) => {
@@ -23,28 +26,22 @@ export const CardComponent = ({ imageLinks, name }) => {
       <Card className={classes.card}>
         <CardMedia className={classes.media} image={image} />
         <CardContent className={classes.content}>
-          <Typography
-            className={"MuiTypography--heading"}
-            variant={"h4"}
-            gutterBottom
-          >
-            {name}
-          </Typography>
-          <Typography
-            className={"MuiTypography--subheading"}
-            variant={"caption"}
-          >
-            Starting Price:
-          </Typography>
-          <br />
-          <Typography
-            className={"MuiTypography--subheading"}
-            variant={"caption"}
-          >
-            Release Date :
-          </Typography>
-
+          <Typography className={classes.heading}>{name}</Typography>
+          <IconButton>
+            {/* can add prices of different variants and different currencies*/}
+            <MonetizationOnIcon />
+            <Typography className={classes.subheading}>
+              Starting Price: $1099
+            </Typography>
+          </IconButton>{" "}
+          <IconButton>
+            <EventIcon />
+            <Typography className={classes.subheading}>
+              Release Date : 24-Feb-2020
+            </Typography>
+          </IconButton>
           <Divider className={classes.divider} light />
+          <Specifications />
         </CardContent>
       </Card>
     </div>

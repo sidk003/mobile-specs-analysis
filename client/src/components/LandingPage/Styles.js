@@ -21,6 +21,7 @@ export default makeStyles((theme) => ({
     flexGrow: 1,
     height: "100vh",
     overflowX: "hidden",
+    marginInlineStart: 30,
     // backgroundImage: (props) => (props.darkTheme ? bgImageDark : bgImageLight),
     // backgroundImage: bgImageDark,
   },

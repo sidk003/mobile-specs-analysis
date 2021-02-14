@@ -25,7 +25,7 @@ export const Apple = ({ darkState }) => {
     if (name === "iPhone 12 Pro Max") {
       twelveProMaxRef.current.scrollIntoView({
         behavior: "smooth",
-        block: "nearest",
+        block: "start",
       });
     } else if (name === "iPhone 12 Pro") {
       twelveProRef.current.scrollIntoView({
