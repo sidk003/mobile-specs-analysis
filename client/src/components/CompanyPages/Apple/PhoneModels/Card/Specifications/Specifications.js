@@ -8,18 +8,13 @@ import {
 } from "@material-ui/core";
 import { Row } from "./Row";
 
-export const Specifications = () => {
-  function createData(name) {
+export const Specifications = ({ specs }) => {
+  const createData = (name) => {
     return {
       name,
-      specs: [
-        { key: "Colours", value: "Gold, Graphite, Pacific Blue, Silver" },
-        { key: "Wireless charging", value: "Yes" },
-        { key: "Fast charging", value: "Proprietary" },
-        { key: "Weight (g)", value: "228.00" },
-      ],
+      specs: specs,
     };
-  }
+  };
 
   const rows = [
     createData("GENERAL"),

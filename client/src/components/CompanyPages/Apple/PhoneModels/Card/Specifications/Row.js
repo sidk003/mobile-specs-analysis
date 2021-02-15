@@ -6,9 +6,7 @@ import {
   Table,
   TableBody,
   TableCell,
-  TableHead,
   TableRow,
-  Typography,
 } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
@@ -56,14 +54,24 @@ export const Row = ({ row }) => {
             <Box margin={1}>
               <Table size="small" aria-label="purchases">
                 <TableBody>
-                  {row.specs.map((specsRow) => (
-                    <TableRow key={specsRow.date}>
-                      <TableCell component="th" scope="row">
-                        {specsRow.key}
-                      </TableCell>
-                      <TableCell align="left">{specsRow.value}</TableCell>
-                    </TableRow>
-                  ))}
+                  <TableRow key={row.date}>
+                    <TableCell component="th" scope="row">
+                      Dimensions
+                    </TableCell>
+                    <TableCell align="left">{row.specs}</TableCell>
+                  </TableRow>
+                  <TableRow key={row.date}>
+                    <TableCell component="th" scope="row">
+                      Weight
+                    </TableCell>
+                    <TableCell align="left">{row.specs}</TableCell>
+                  </TableRow>
+                  <TableRow key={row.date}>
+                    <TableCell component="th" scope="row">
+                      IP Rating
+                    </TableCell>
+                    <TableCell align="left">{row.specs}</TableCell>
+                  </TableRow>
                 </TableBody>
               </Table>
             </Box>

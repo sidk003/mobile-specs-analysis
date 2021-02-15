@@ -13,19 +13,15 @@ const AppleSchema = new mongoose.Schema({
   phonemodels: {
     twelvepromax: {
       title: { type: String, required: true },
-      carousel: {
-        image1: { type: String, required: true },
-        image2: { type: String, required: true },
-        image3: { type: String, required: true },
-      },
+      image: { type: String, required: true },
+      price: { type: String, required: true },
+      date: { type: String, required: true },
     },
     twelvepro: {
       title: { type: String, required: true },
-      carousel: {
-        image1: { type: String, required: true },
-        image2: { type: String, required: true },
-        image3: { type: String, required: true },
-      },
+      image: { type: String, required: true },
+      price: { type: String, required: true },
+      date: { type: String, required: true },
     },
   },
 });

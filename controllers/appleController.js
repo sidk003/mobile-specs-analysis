@@ -1,5 +1,6 @@
 const Apple = require("../models/Apple");
 var request = require("request");
+const spawn = require("child_process").spawn;
 
 // Calling Tiingo API
 const symbol = "aapl";
@@ -23,14 +24,32 @@ request(requestOptions, function (error, response, body) {
   jsonResponse = { stockData };
 });
 
+// Calling python script
+var pythonResponse = "";
+var pythonJson = "";
+var pythonStr = "";
+var specs = "";
+
+const pythonProcess = spawn("python", ["./python/specifications.py"]);
+pythonProcess.stdout.on("data", (data) => {
+  pythonStr = data.toString();
+  pythonJson = JSON.parse(pythonStr);
+  specs = pythonJson.Data;
+  pythonResponse = { specs };
+});
+
 // @desc    Get data of Apple
 // @route   GET /api/v1/apple
 // @access  Public
 exports.getApple = async (req, res, next) => {
   try {
+    console.log(typeof pythonResponse);
     const apple = await Apple.findOne();
-
-    const mergedResponse = { ...apple._doc, ...jsonResponse };
+    const mergedResponse = {
+      ...apple._doc,
+      ...jsonResponse,
+      ...pythonResponse,
+    };
     return res.status(200).json({
       success: true,
       count: mergedResponse.length,

@@ -5,8 +5,8 @@ import { AppleCarousel } from "./Carousel/AppleCarousel";
 import { Stockgraph } from "./StockGraph/StockGraph";
 import { PhoneTable } from "./Table/Table";
 import { Bargraph } from "./BarGraph/Bargraph";
-import TwelveProMax from "./PhoneModels/TwelveProMax/TwelveProMax";
 import useStyles from "./Styles";
+import PhoneModels from "./PhoneModels/PhoneModels";
 
 export const Apple = ({ darkState }) => {
   const classes = useStyles();
@@ -43,6 +43,7 @@ export const Apple = ({ darkState }) => {
   var table = "";
   var twelvepromaxContent = "";
   var twelveproContent = "";
+  var specs = "";
 
   if (apple !== undefined && apple.stockData !== undefined) {
     companyName = apple.title;
@@ -51,6 +52,7 @@ export const Apple = ({ darkState }) => {
     stockData = apple.stockData;
     bargraph = apple.bargraph;
     table = apple.table;
+    specs = apple.specs;
     twelvepromaxContent = apple.phonemodels.twelvepromax;
     twelveproContent = apple.phonemodels.twelvepro;
   }
@@ -68,11 +70,16 @@ export const Apple = ({ darkState }) => {
       <Divider className={classes.divider} />
       <Typography className={classes.header}>iPhone Releases</Typography>
       <Divider className={classes.divider} />
-      <TwelveProMax
+      <PhoneModels
         twelvepromaxContent={twelvepromaxContent}
+        specs={specs}
         ref={twelveProMaxRef}
       />
-      <TwelveProMax twelveproContent={twelveproContent} ref={twelveProRef} />
+      <PhoneModels
+        twelveproContent={twelveproContent}
+        ref={twelveProRef}
+        specs={specs}
+      />
     </div>
   );
 };

@@ -12,36 +12,51 @@ import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
 import EventIcon from "@material-ui/icons/Event";
 import useStyles from "./Styles";
 
-export const CardComponent = ({ imageLinks, name }) => {
+export const CardComponent = ({ content }) => {
   const classes = useStyles();
+  const twelvepromaxContent = content.twelvepromaxContent;
+  const twelveproContent = content.twelveproContent;
 
+  var title = "";
   var image = "";
+  var price = "";
+  var date = "";
+  var specs = content.specs;
 
-  if (imageLinks !== undefined) {
-    image = imageLinks.image3;
+  if (twelvepromaxContent !== undefined) {
+    title = twelvepromaxContent.title;
+    image = twelvepromaxContent.image;
+    price = twelvepromaxContent.price;
+    date = twelvepromaxContent.date;
+  } else if (twelveproContent !== undefined) {
+    title = twelveproContent.title;
+    image = twelveproContent.image;
+    price = twelveproContent.price;
+    date = twelveproContent.date;
   }
+  // console.log("Specs: ", specs);
 
   return (
     <div>
       <Card className={classes.card}>
         <CardMedia className={classes.media} image={image} />
         <CardContent className={classes.content}>
-          <Typography className={classes.heading}>{name}</Typography>
+          <Typography className={classes.heading}>{title}</Typography>
           <IconButton>
             {/* can add prices of different variants and different currencies*/}
             <MonetizationOnIcon />
             <Typography className={classes.subheading}>
-              Starting Price: $1099
+              Starting Price: {price}
             </Typography>
           </IconButton>{" "}
           <IconButton>
             <EventIcon />
             <Typography className={classes.subheading}>
-              Release Date : 24-Feb-2020
+              Release Date : {date}
             </Typography>
           </IconButton>
           <Divider className={classes.divider} light />
-          <Specifications />
+          <Specifications specs={specs} />
         </CardContent>
       </Card>
     </div>

@@ -22,9 +22,6 @@ export default makeStyles((theme) => ({
   divider: {
     margin: `${theme.spacing.unit * 2}px 0`,
   },
-  heading: {
-    fontWeight: "bold",
-  },
   subheading: {
     marginLeft: 5,
     fontSize: 14,
