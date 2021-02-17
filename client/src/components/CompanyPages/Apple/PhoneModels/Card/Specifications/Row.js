@@ -30,6 +30,11 @@ export const Row = ({ row }) => {
     SENSORS: ExploreIcon,
   };
   const IconComponent = components[row.name];
+  var rowContent = "";
+
+  if (row.spec !== undefined) {
+    rowContent = row.spec;
+  }
 
   return (
     <>
@@ -53,26 +58,24 @@ export const Row = ({ row }) => {
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box margin={1}>
               <Table size="small" aria-label="purchases">
-                <TableBody>
-                  <TableRow key={row.date}>
-                    <TableCell component="th" scope="row">
-                      Dimensions
-                    </TableCell>
-                    <TableCell align="left">{row.specs}</TableCell>
-                  </TableRow>
-                  <TableRow key={row.date}>
-                    <TableCell component="th" scope="row">
-                      Weight
-                    </TableCell>
-                    <TableCell align="left">{row.specs}</TableCell>
-                  </TableRow>
-                  <TableRow key={row.date}>
-                    <TableCell component="th" scope="row">
-                      IP Rating
-                    </TableCell>
-                    <TableCell align="left">{row.specs}</TableCell>
-                  </TableRow>
-                </TableBody>
+                {rowContent && (
+                  <TableBody>
+                    {rowContent.map((content) => (
+                      <TableRow tabIndex={-1}>
+                        <TableCell></TableCell>
+                        <TableCell
+                          component="th"
+                          scope="row"
+                          padding="none"
+                          align="left"
+                        >
+                          {content.key}
+                        </TableCell>
+                        <TableCell align="left">{content.value}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                )}
               </Table>
             </Box>
           </Collapse>

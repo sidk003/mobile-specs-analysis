@@ -9,21 +9,22 @@ import {
 import { Row } from "./Row";
 
 export const Specifications = ({ specs }) => {
-  const createData = (name) => {
+  const createData = (name, specification) => {
     return {
       name,
-      specs: specs,
+      spec: specification,
     };
   };
 
   const rows = [
-    createData("GENERAL"),
-    createData("DISPLAY"),
-    createData("HARDWARE"),
-    createData("CAMERA"),
-    createData("CONNECTIVITY"),
-    createData("SENSORS"),
+    createData("GENERAL", specs.general),
+    createData("DISPLAY", specs.display),
+    createData("HARDWARE", specs.hardware),
+    createData("CAMERA", specs.camera),
+    createData("CONNECTIVITY", specs.connectivity),
+    createData("SENSORS", specs.sensors),
   ];
+  // console.log("Specs from specs: ", typeof rows);
 
   return (
     <TableContainer component={Paper}>

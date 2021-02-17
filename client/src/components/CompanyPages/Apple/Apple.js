@@ -43,7 +43,6 @@ export const Apple = ({ darkState }) => {
   var table = "";
   var twelvepromaxContent = "";
   var twelveproContent = "";
-  var specs = "";
 
   if (apple !== undefined && apple.stockData !== undefined) {
     companyName = apple.title;
@@ -52,7 +51,6 @@ export const Apple = ({ darkState }) => {
     stockData = apple.stockData;
     bargraph = apple.bargraph;
     table = apple.table;
-    specs = apple.specs;
     twelvepromaxContent = apple.phonemodels.twelvepromax;
     twelveproContent = apple.phonemodels.twelvepro;
   }
@@ -72,14 +70,9 @@ export const Apple = ({ darkState }) => {
       <Divider className={classes.divider} />
       <PhoneModels
         twelvepromaxContent={twelvepromaxContent}
-        specs={specs}
         ref={twelveProMaxRef}
       />
-      <PhoneModels
-        twelveproContent={twelveproContent}
-        ref={twelveProRef}
-        specs={specs}
-      />
+      <PhoneModels twelveproContent={twelveproContent} ref={twelveProRef} />
     </div>
   );
 };

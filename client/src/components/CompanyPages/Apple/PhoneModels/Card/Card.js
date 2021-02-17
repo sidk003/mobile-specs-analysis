@@ -21,20 +21,27 @@ export const CardComponent = ({ content }) => {
   var image = "";
   var price = "";
   var date = "";
-  var specs = content.specs;
+  var specs = "";
 
-  if (twelvepromaxContent !== undefined) {
+  if (
+    twelvepromaxContent !== undefined &&
+    twelvepromaxContent.specs !== undefined
+  ) {
     title = twelvepromaxContent.title;
     image = twelvepromaxContent.image;
     price = twelvepromaxContent.price;
     date = twelvepromaxContent.date;
-  } else if (twelveproContent !== undefined) {
+    specs = twelvepromaxContent.specs;
+  } else if (
+    twelveproContent !== undefined &&
+    twelveproContent.specs !== undefined
+  ) {
     title = twelveproContent.title;
     image = twelveproContent.image;
     price = twelveproContent.price;
     date = twelveproContent.date;
+    specs = twelveproContent.specs;
   }
-  // console.log("Specs: ", specs);
 
   return (
     <div>
