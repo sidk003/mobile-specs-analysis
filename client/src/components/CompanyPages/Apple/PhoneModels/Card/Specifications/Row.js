@@ -38,17 +38,13 @@ export const Row = ({ row }) => {
 
   return (
     <>
-      <TableRow className={classes.root}>
+      <TableRow className={classes.root} onClick={() => setOpen(!open)}>
         <TableCell className={classes.specification}>
           <IconComponent className={classes.icon} />
           {row.name}
         </TableCell>
         <TableCell>
-          <IconButton
-            aria-label="expand row"
-            size="small"
-            onClick={() => setOpen(!open)}
-          >
+          <IconButton aria-label="expand row" size="small">
             {open ? <RemoveIcon /> : <AddIcon />}
           </IconButton>
         </TableCell>

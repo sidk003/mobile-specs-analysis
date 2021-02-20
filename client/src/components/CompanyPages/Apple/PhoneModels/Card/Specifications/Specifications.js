@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Table,
-  TableBody,
-  TableContainer,
-  TableHead,
-  Paper,
-} from "@material-ui/core";
+import { Table, TableBody, TableContainer, Paper } from "@material-ui/core";
 import { Row } from "./Row";
 
 export const Specifications = ({ specs }) => {
@@ -24,12 +18,10 @@ export const Specifications = ({ specs }) => {
     createData("CONNECTIVITY", specs.connectivity),
     createData("SENSORS", specs.sensors),
   ];
-  // console.log("Specs from specs: ", typeof rows);
 
   return (
     <TableContainer component={Paper}>
       <Table aria-label="collapsible table">
-        <TableHead>Full Specifications</TableHead>
         <TableBody>
           {rows.map((row) => (
             <Row row={row} />
