@@ -12,6 +12,7 @@ export const Apple = ({ darkState }) => {
   const classes = useStyles();
   const twelveProMaxRef = useRef(null);
   const twelveProRef = useRef(null);
+  const eightPlusRef = useRef(null);
 
   const { apple, getApple } = useContext(GlobalContext);
 
@@ -32,6 +33,11 @@ export const Apple = ({ darkState }) => {
         behavior: "smooth",
         block: "nearest",
       });
+    } else if (name === "iPhone 8 Plus") {
+      eightPlusRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+      });
     }
   };
 
@@ -43,6 +49,7 @@ export const Apple = ({ darkState }) => {
   var table = "";
   var twelvepromaxContent = "";
   var twelveproContent = "";
+  var eightplusContent = "";
 
   if (apple !== undefined && apple.stockData !== undefined) {
     companyName = apple.title;
@@ -53,6 +60,7 @@ export const Apple = ({ darkState }) => {
     table = apple.table;
     twelvepromaxContent = apple.phonemodels.twelvepromax;
     twelveproContent = apple.phonemodels.twelvepro;
+    eightplusContent = apple.phonemodels.eightplus;
   }
 
   return (
@@ -73,6 +81,7 @@ export const Apple = ({ darkState }) => {
         ref={twelveProMaxRef}
       />
       <PhoneModels twelveproContent={twelveproContent} ref={twelveProRef} />
+      <PhoneModels eightplusContent={eightplusContent} ref={eightPlusRef} />
     </div>
   );
 };
