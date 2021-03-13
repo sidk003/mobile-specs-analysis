@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useRef } from "react";
 import { GlobalContext } from "../../../context/GlobalState";
-import { Typography, Divider } from "@material-ui/core";
+import { Typography, Divider, Box, CircularProgress } from "@material-ui/core";
 import { AppleCarousel } from "./Carousel/AppleCarousel";
 import { Stockgraph } from "./StockGraph/StockGraph";
 import { PhoneTable } from "./Table/Table";
@@ -26,7 +26,7 @@ export const Apple = ({ darkState }) => {
     if (name === "iPhone 12 Pro Max") {
       twelveProMaxRef.current.scrollIntoView({
         behavior: "smooth",
-        block: "start",
+        block: "nearest",
       });
     } else if (name === "iPhone 12 Pro") {
       twelveProRef.current.scrollIntoView({
@@ -64,14 +64,20 @@ export const Apple = ({ darkState }) => {
   }
 
   return (
-    <div className={classes.content}>
-      <Typography variant="h2">{companyName}</Typography>
-      <Typography variant="h6" color="textSecondary">
-        {tagline}
-      </Typography>
-      <AppleCarousel imageLinks={imageLinks} />
-      <Stockgraph stockData={stockData} darkState={darkState} />
-      <Bargraph darkState={darkState} bargraph={bargraph} />
+    <Box className={classes.content}>
+      <Box className={classes.analytics}>
+        <Typography variant="h2">{companyName}</Typography>
+        <Typography variant="h6" color="textSecondary">
+          {tagline}
+        </Typography>
+        {imageLinks ? (
+          <AppleCarousel imageLinks={imageLinks} />
+        ) : (
+          <CircularProgress />
+        )}
+        <Stockgraph stockData={stockData} darkState={darkState} />
+        <Bargraph darkState={darkState} bargraph={bargraph} />
+      </Box>
       <PhoneTable table={table} GetComponentName={GetComponentName} />
       <Divider className={classes.divider} />
       <Typography className={classes.header}>iPhone Releases</Typography>
@@ -82,6 +88,6 @@ export const Apple = ({ darkState }) => {
       />
       <PhoneModels twelveproContent={twelveproContent} ref={twelveProRef} />
       <PhoneModels eightplusContent={eightplusContent} ref={eightPlusRef} />
-    </div>
+    </Box>
   );
 };

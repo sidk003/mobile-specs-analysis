@@ -9,6 +9,7 @@ import {
   Typography,
   Divider,
   IconButton,
+  Box,
 } from "@material-ui/core";
 import { Searchbar } from "./Searchbar/Searchbar";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -19,7 +20,7 @@ import useStyles from "./Styles";
 
 export const Navbar = ({ darkState, handleThemeChange }) => {
   const classes = useStyles();
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(!open);
@@ -28,13 +29,7 @@ export const Navbar = ({ darkState, handleThemeChange }) => {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar
-        position="fixed"
-        className={classes.appBar}
-        fooJon={classNames(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
-      >
+      <AppBar position="fixed" className={classes.appBar}>
         <Toolbar disableGutters={true}>
           <IconButton
             color="inherit"
@@ -58,14 +53,16 @@ export const Navbar = ({ darkState, handleThemeChange }) => {
           >
             Mobile Specs Analysis
           </Typography>
-          <div className={classes.searchbar}>
-            <Searchbar />
-          </div>
-          <div className={classes.themeToggle}>
-            <IconButton onClick={handleThemeChange}>
-              {darkState ? <Brightness5Icon /> : <NightsStayIcon />}
-            </IconButton>
-          </div>
+          <Box className={classes.rightComponents}>
+            <div className={classes.searchbar}>
+              <Searchbar />
+            </div>
+            <div className={classes.themeToggle}>
+              <IconButton onClick={handleThemeChange}>
+                {darkState ? <Brightness5Icon /> : <NightsStayIcon />}
+              </IconButton>
+            </div>
+          </Box>
         </Toolbar>
       </AppBar>
       <Drawer

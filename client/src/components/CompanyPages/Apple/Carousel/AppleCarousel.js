@@ -2,6 +2,7 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+// import { CircularProgress } from "@material-ui/core";
 import useStyles from "./Styles";
 
 export const AppleCarousel = ({ imageLinks }) => {
@@ -20,6 +21,15 @@ export const AppleCarousel = ({ imageLinks }) => {
   var imgSlides = () =>
     images.map((link) => (
       <div key="to avoid warning, useless af">
+        {/* {link.img ? (
+          <img
+            className={classes.dimesions}
+            src={link.img}
+            alt="Phone Images"
+          />
+        ) : (
+          <CircularProgress />
+        )} */}
         <img className={classes.dimensions} src={link.img} alt="Phone Images" />
       </div>
     ));

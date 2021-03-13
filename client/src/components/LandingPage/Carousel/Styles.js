@@ -6,7 +6,9 @@ export default makeStyles(() => ({
     width: 640,
   },
   position: {
-    marginLeft: 130,
+    // media queries to be added
+    marginLeft: 260,
+    marginTop: -50,
   },
   slickSlider: {
     width: 775,

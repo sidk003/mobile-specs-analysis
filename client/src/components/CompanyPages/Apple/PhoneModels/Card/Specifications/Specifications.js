@@ -24,7 +24,7 @@ export const Specifications = ({ specs }) => {
       <Table aria-label="collapsible table">
         <TableBody>
           {rows.map((row) => (
-            <Row row={row} />
+            <Row row={row} key={Math.random().toString(36).substr(2, 9)} />
           ))}
         </TableBody>
       </Table>

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Grid, Paper, Typography, Divider } from "@material-ui/core";
+import { Grid, Paper, Typography, Divider, Box } from "@material-ui/core";
 import { Carousel } from "../Carousel/Carousel";
 import { GlobalContext } from "../../../context/GlobalState";
 import useStyles from "./Styles";
@@ -29,14 +29,13 @@ export const About = () => {
       <Grid item xs={12}>
         <Carousel imageLinks={imageLinks} />
       </Grid>
-      <Grid item xs={12}>
+      <Box className={classes.wrapper}>
         <Paper className={classes.paper}>
           <div className={classes.header}>
             <Typography variant="h4" gutterBottom>
               {title}
             </Typography>
           </div>
-
           <Divider />
           <div className={classes.section}>
             <Typography variant="body1" gutterBottom>
@@ -44,7 +43,7 @@ export const About = () => {
             </Typography>
           </div>
         </Paper>
-      </Grid>
+      </Box>
     </Grid>
   );
 };

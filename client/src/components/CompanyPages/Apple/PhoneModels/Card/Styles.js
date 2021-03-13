@@ -2,10 +2,11 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   card: {
-    maxWidth: 900,
+    // media queries to be added
+    width: "100%",
     marginTop: 50,
     marginBottom: 100,
-    marginLeft: 100,
+    // marginLeft: 5,
     // transition: "0.3s",
     boxShadow: "0 8px 40px -12px rgba(0,0,0,0.3)",
     "&:hover": {
@@ -17,10 +18,10 @@ export default makeStyles((theme) => ({
   },
   content: {
     textAlign: "left",
-    padding: theme.spacing.unit * 3,
+    padding: theme.spacing(3),
   },
   divider: {
-    margin: `${theme.spacing.unit * 2}px 0`,
+    margin: `${theme.spacing(2)}px 0`,
   },
   subheading: {
     marginLeft: 5,
@@ -30,6 +31,6 @@ export default makeStyles((theme) => ({
   heading: {
     fontSize: 36,
     marginLeft: 15,
-    fontFamily: "serif  ",
+    fontFamily: "serif",
   },
 }));

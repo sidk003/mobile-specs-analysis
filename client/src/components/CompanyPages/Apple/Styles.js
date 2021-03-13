@@ -2,19 +2,21 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   content: {
-    flexGrow: 1,
-    marginLeft: -90,
-    marginTop: -20,
-    width: "85vw",
-    overflow: "hidden",
+    // media queries to be added
+    width: 1000,
+    marginTop: -80,
+  },
+  analytics: {
+    width: "100%",
   },
   divider: {
-    width: 1080,
+    // media queries to be added
+    width: "100%",
     marginTop: 30,
     marginBottom: 30,
   },
   header: {
     fontSize: 34,
-    marginLeft: 400,
+    marginLeft: 350,
   },
 }));

@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   root: {
-    width: 1080,
+    width: "100%",
     marginTop: 30,
   },
   paper: {
@@ -10,7 +10,7 @@ export default makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
   },
   table: {
-    Width: "100%",
+    width: "100%",
   },
   visuallyHidden: {
     border: 0,

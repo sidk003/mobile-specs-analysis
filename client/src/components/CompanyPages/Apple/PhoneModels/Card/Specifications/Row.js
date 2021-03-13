@@ -57,7 +57,7 @@ export const Row = ({ row }) => {
                 {rowContent && (
                   <TableBody>
                     {rowContent.map((content) => (
-                      <TableRow tabIndex={-1}>
+                      <TableRow tabIndex={-1} key={content.key}>
                         <TableCell></TableCell>
                         <TableCell
                           component="th"

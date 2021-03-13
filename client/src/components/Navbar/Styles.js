@@ -3,6 +3,9 @@ import { makeStyles } from "@material-ui/core/styles";
 const drawerWidth = 220;
 
 export default makeStyles((theme) => ({
+  root: {
+    // marginLeft: `calc(100% - ${drawerWidth}px)`,
+  },
   appBarSpacer: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
@@ -63,27 +66,34 @@ export default makeStyles((theme) => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
     overflowX: "hidden",
-    width: theme.spacing.unit * 7 + 1,
+    width: theme.spacing(7) + 1,
     [theme.breakpoints.up("sm")]: {
-      width: theme.spacing.unit * 9 + 1,
+      width: theme.spacing(9) + 1,
     },
   },
   toolbar: {
     display: "flex",
     alignItems: "center",
-    marginTop: theme.spacing.unit,
+    marginTop: theme.spacing(1),
     justifyContent: "flex-end",
     padding: "0 8px",
     ...theme.mixins.toolbar,
   },
   grow: {
     flexGrow: 1,
+    "@media (max-width:700px)": {
+      display: "none",
+    },
   },
-  themeToggle: {
-    marginRight: 15,
+  rightComponents: {
+    display: "flex",
   },
   searchbar: {
+    paddingTop: 7,
     width: 300,
-    // marginRight: 500,
+    // make more mobile phone compatible later-on
+    [theme.breakpoints.down("sm")]: {
+      width: 250,
+    },
   },
 }));

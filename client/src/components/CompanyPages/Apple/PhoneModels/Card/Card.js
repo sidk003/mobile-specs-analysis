@@ -6,6 +6,7 @@ import {
   Divider,
   Typography,
   IconButton,
+  CircularProgress,
 } from "@material-ui/core";
 import { Specifications } from "./Specifications/Specifications";
 import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
@@ -56,7 +57,15 @@ export const CardComponent = ({ content }) => {
   return (
     <div>
       <Card className={classes.card}>
-        <CardMedia className={classes.media} image={image} />
+        {image ? (
+          <CardMedia
+            className={classes.media}
+            alt="Mobile image"
+            image={image}
+          />
+        ) : (
+          <CircularProgress />
+        )}
         <CardContent className={classes.content}>
           <Typography className={classes.heading}>{title}</Typography>
           <IconButton>
