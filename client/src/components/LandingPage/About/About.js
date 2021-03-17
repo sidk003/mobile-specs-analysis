@@ -4,7 +4,7 @@ import { Carousel } from "../Carousel/Carousel";
 import { GlobalContext } from "../../../context/GlobalState";
 import useStyles from "./Styles";
 
-export const About = () => {
+export const About = ({ drawerOpen }) => {
   const classes = useStyles();
   const { about, getAbout } = useContext(GlobalContext);
 
@@ -25,9 +25,9 @@ export const About = () => {
   }
 
   return (
-    <Grid container spacing={3}>
-      <Grid item xs={12}>
-        <Carousel imageLinks={imageLinks} />
+    <Box>
+      <Grid className={classes.parent}>
+        <Carousel imageLinks={imageLinks} drawerOpen={drawerOpen} />
       </Grid>
       <Box className={classes.wrapper}>
         <Paper className={classes.paper}>
@@ -44,6 +44,6 @@ export const About = () => {
           </div>
         </Paper>
       </Box>
-    </Grid>
+    </Box>
   );
 };

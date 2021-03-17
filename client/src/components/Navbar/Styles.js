@@ -81,7 +81,7 @@ export default makeStyles((theme) => ({
   },
   grow: {
     flexGrow: 1,
-    "@media (max-width:700px)": {
+    [theme.breakpoints.down(700)]: {
       display: "none",
     },
   },
@@ -92,7 +92,7 @@ export default makeStyles((theme) => ({
     paddingTop: 7,
     width: 300,
     // make more mobile phone compatible later-on
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down(400)]: {
       width: 250,
     },
   },

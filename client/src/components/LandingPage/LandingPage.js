@@ -18,6 +18,7 @@ import useStyles from "./Styles";
 export const LandingPage = () => {
   // Add about ML we using on about-us page
   const [darkState, setDarkState] = useState(true);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const bgImageLight = "url(https://i.redd.it/qwd83nc4xxf41.jpg)";
   const bgImageDark = "url(https://cdn.wallpapersafari.com/69/10/CEokAi.jpg)";
@@ -68,55 +69,31 @@ export const LandingPage = () => {
     setDarkState(!darkState);
   };
 
+  const GetDrawerState = (open) => {
+    // console.log("drawer state called", open);
+    setDrawerOpen(open);
+  };
+
   return (
-    // <Router>
-    //   <ThemeProvider theme={darkTheme}>
-    //     <div className={classes.root}>
-    //       <CssBaseline />
-    //       <Navbar darkState={darkState} handleThemeChange={handleThemeChange} />
-    //       <main className={classes.content}>
-    //         <div className={classes.appBarSpacer} />
-    //         <Container maxWidth="md" className={classes.container}>
-    //           <Switch>
-    //             <Route exact path="/" component={About} />
-    //             <Route
-    //               path="/apple"
-    //               render={() => <Apple darkState={darkState} />}
-    //             />
-    //             <Route path="/google" component={Google} />
-    //             <Route path="/huawei" component={Huawei} />
-    //             <Route path="/oneplus" component={Oneplus} />
-    //             <Route path="/samsung" component={Samsung} />
-    //             <Route path="/xiaomi" component={Xiaomi} />
-    //           </Switch>
-    //           <BackToTop>
-    //             <Fab
-    //               color="secondary"
-    //               size="large"
-    //               aria-label="scroll back to top"
-    //             >
-    //               <KeyboardArrowUp />
-    //             </Fab>
-    //           </BackToTop>
-    //           <Box pt={4}>
-    //             <Footer />
-    //           </Box>
-    //         </Container>
-    //       </main>
-    //     </div>
-    //   </ThemeProvider>
-    // </Router>
     <Router>
       <ThemeProvider theme={darkTheme}>
         <div className={classes.root}>
           <CssBaseline />
-          <Navbar darkState={darkState} handleThemeChange={handleThemeChange} />
+          <Navbar
+            darkState={darkState}
+            handleThemeChange={handleThemeChange}
+            GetDrawerState={GetDrawerState}
+          />
           <Box className={classes.content}>
             <div className={classes.appBarSpacer} />
             <Toolbar id="back-to-top-anchor" />
             <Container className={classes.container}>
               <Switch>
-                <Route exact path="/" component={About} />
+                <Route
+                  exact
+                  path="/"
+                  render={() => <About drawerOpen={drawerOpen} />}
+                />
                 <Route
                   path="/apple"
                   render={() => <Apple darkState={darkState} />}

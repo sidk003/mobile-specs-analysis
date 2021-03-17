@@ -18,12 +18,13 @@ import NightsStayIcon from "@material-ui/icons/NightsStay";
 import { mainList, ListItems } from "../Sidebar/ListItems";
 import useStyles from "./Styles";
 
-export const Navbar = ({ darkState, handleThemeChange }) => {
+export const Navbar = ({ darkState, handleThemeChange, GetDrawerState }) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(!open);
+    GetDrawerState(open);
   };
 
   return (

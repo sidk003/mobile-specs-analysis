@@ -15,6 +15,8 @@ export default makeStyles((theme) => ({
   },
   root: {
     display: "flex",
+    // below line to fix scrollbar at the cost of scroll to top
+    // overflowX: "hidden",
   },
   scrollToTop: {
     position: "fixed",
