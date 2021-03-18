@@ -6,9 +6,9 @@ import { CircularProgress } from "@material-ui/core";
 import useStyles from "./Styles";
 
 export const Carousel = ({ imageLinks, drawerOpen }) => {
-  var LeftMarginIpad = !drawerOpen ? 15 : 90;
-  var LeftMarginHD = drawerOpen ? 290 : 220;
-  var LeftMarginFHD = drawerOpen ? 300 : 300;
+  var LeftMarginIpad = drawerOpen ? 15 : 90;
+  var LeftMarginHD = !drawerOpen ? 290 : 220;
+  var LeftMarginFHD = !drawerOpen ? 300 : 300;
 
   const classes = useStyles({
     LeftMarginIpad: LeftMarginIpad,

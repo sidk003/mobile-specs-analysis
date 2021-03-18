@@ -19,10 +19,10 @@ export const LandingPage = () => {
   // Add about ML we using on about-us page
   const [darkState, setDarkState] = useState(true);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  var showContent = true;
 
   const bgImageLight = "url(https://i.redd.it/qwd83nc4xxf41.jpg)";
   const bgImageDark = "url(https://cdn.wallpapersafari.com/69/10/CEokAi.jpg)";
-
   const bgDark = "#121212";
   const bgLight = "#FAFAFA";
   const cardDark = "#1A1A1A";
@@ -63,16 +63,25 @@ export const LandingPage = () => {
     },
   });
 
-  const classes = useStyles();
+  const classes = useStyles({ drawerOpen: drawerOpen });
 
   const handleThemeChange = () => {
     setDarkState(!darkState);
   };
 
   const GetDrawerState = (open) => {
-    // console.log("drawer state called", open);
     setDrawerOpen(open);
   };
+  // To check if device is a mobile
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  )
+    var isMobile = true;
+
+  if (drawerOpen === true && isMobile === true) showContent = false;
+  else showContent = true;
 
   return (
     <Router>
@@ -83,41 +92,44 @@ export const LandingPage = () => {
             darkState={darkState}
             handleThemeChange={handleThemeChange}
             GetDrawerState={GetDrawerState}
+            setDrawerOpen={setDrawerOpen}
           />
-          <Box className={classes.content}>
-            <div className={classes.appBarSpacer} />
-            <Toolbar id="back-to-top-anchor" />
-            <Container className={classes.container}>
-              <Switch>
-                <Route
-                  exact
-                  path="/"
-                  render={() => <About drawerOpen={drawerOpen} />}
-                />
-                <Route
-                  path="/apple"
-                  render={() => <Apple darkState={darkState} />}
-                />
-                <Route path="/google" component={Google} />
-                <Route path="/huawei" component={Huawei} />
-                <Route path="/oneplus" component={Oneplus} />
-                <Route path="/samsung" component={Samsung} />
-                <Route path="/xiaomi" component={Xiaomi} />
-              </Switch>
-              <BackToTop>
-                <Fab
-                  color="secondary"
-                  size="large"
-                  aria-label="scroll back to top"
-                >
-                  <KeyboardArrowUp />
-                </Fab>
-              </BackToTop>
-              <Box pt={4}>
-                <Footer />
-              </Box>
-            </Container>
-          </Box>
+          {showContent && (
+            <Box className={classes.content}>
+              <div className={classes.appBarSpacer} />
+              <Toolbar id="back-to-top-anchor" />
+              <Container className={classes.container}>
+                <Switch>
+                  <Route
+                    exact
+                    path="/"
+                    render={() => <About drawerOpen={drawerOpen} />}
+                  />
+                  <Route
+                    path="/apple"
+                    render={() => <Apple darkState={darkState} />}
+                  />
+                  <Route path="/google" component={Google} />
+                  <Route path="/huawei" component={Huawei} />
+                  <Route path="/oneplus" component={Oneplus} />
+                  <Route path="/samsung" component={Samsung} />
+                  <Route path="/xiaomi" component={Xiaomi} />
+                </Switch>
+                <BackToTop>
+                  <Fab
+                    color="secondary"
+                    size="large"
+                    aria-label="scroll back to top"
+                  >
+                    <KeyboardArrowUp />
+                  </Fab>
+                </BackToTop>
+                <Box pt={4}>
+                  <Footer />
+                </Box>
+              </Container>
+            </Box>
+          )}
         </div>
       </ThemeProvider>
     </Router>

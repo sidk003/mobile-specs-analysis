@@ -26,7 +26,7 @@ export const About = ({ drawerOpen }) => {
 
   return (
     <Box>
-      <Grid className={classes.parent}>
+      <Grid>
         <Carousel imageLinks={imageLinks} drawerOpen={drawerOpen} />
       </Grid>
       <Box className={classes.wrapper}>

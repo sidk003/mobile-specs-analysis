@@ -15,16 +15,21 @@ import { Searchbar } from "./Searchbar/Searchbar";
 import MenuIcon from "@material-ui/icons/Menu";
 import Brightness5Icon from "@material-ui/icons/Brightness5";
 import NightsStayIcon from "@material-ui/icons/NightsStay";
-import { mainList, ListItems } from "../Sidebar/ListItems";
+import { MainList, ListItems } from "../Sidebar/ListItems";
 import useStyles from "./Styles";
 
-export const Navbar = ({ darkState, handleThemeChange, GetDrawerState }) => {
+export const Navbar = ({
+  darkState,
+  handleThemeChange,
+  GetDrawerState,
+  setDrawerOpen,
+}) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
+    GetDrawerState(!open);
     setOpen(!open);
-    GetDrawerState(open);
   };
 
   return (
@@ -81,10 +86,10 @@ export const Navbar = ({ darkState, handleThemeChange, GetDrawerState }) => {
         open={open}
       >
         <div className={classes.toolbar} />
-        <List>{mainList}</List>
+        <MainList setOpen={setOpen} setDrawerOpen={setDrawerOpen} />
         <Divider />
         <List>
-          <ListItems />
+          <ListItems setOpen={setOpen} setDrawerOpen={setDrawerOpen} />
         </List>
       </Drawer>
     </div>

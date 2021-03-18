@@ -1,12 +1,9 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
-  parent: {
-    // For Ipads
-  },
-
   wrapper: {
     // media queries to be added
+
     // For Ipads
     [theme.breakpoints.up(600) && theme.breakpoints.down(1100)]: {
       marginLeft: 10,

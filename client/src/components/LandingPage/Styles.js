@@ -25,12 +25,14 @@ export default makeStyles((theme) => ({
   },
   appBarSpacer: theme.mixins.toolbar,
   content: {
+    // For mobiles when drawer open don't show about
+    // [theme.breakpoints.down(450)]: {
+    //   display: (props) => (props.drawerOpen ? "block" : "none"),
+    // },
     flexGrow: 1,
     height: "100vh",
     // media queries to be added
     marginLeft: 10,
-    // backgroundImage: (props) => (props.darkTheme ? bgImageDark : bgImageLight),
-    // backgroundImage: bgImageDark,
   },
   container: {
     paddingTop: theme.spacing(4),

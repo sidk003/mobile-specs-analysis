@@ -1,10 +1,14 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const drawerWidth = 220;
+const drawerWidthMobile = "100vw";
 
 export default makeStyles((theme) => ({
   root: {
     // marginLeft: `calc(100% - ${drawerWidth}px)`,
+    // [theme.breakpoints.down(700)]: {
+    //   width: 500,
+    // },
   },
   appBarSpacer: theme.mixins.toolbar,
   content: {
@@ -18,10 +22,21 @@ export default makeStyles((theme) => ({
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
+    // For mobiles
   },
   appBarShift: {
     marginLeft: drawerWidth,
+
+    // For mobiles
+    [theme.breakpoints.down(450)]: {
+      marginLeft: drawerWidthMobile,
+    },
+
     width: `calc(100% - ${drawerWidth}px)`,
+    [theme.breakpoints.down(450)]: {
+      width: `calc(100% - ${drawerWidthMobile}px)`,
+    },
+
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -50,17 +65,27 @@ export default makeStyles((theme) => ({
   },
   drawer: {
     width: drawerWidth,
+    [theme.breakpoints.down(450)]: {
+      width: drawerWidthMobile,
+    },
     flexShrink: 0,
     whiteSpace: "nowrap",
   },
   drawerOpen: {
     width: drawerWidth,
+    [theme.breakpoints.down(450)]: {
+      width: drawerWidthMobile,
+    },
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
   drawerClose: {
+    // dont show left bar in mobiles
+    [theme.breakpoints.down(450)]: {
+      display: "none",
+    },
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -91,9 +116,32 @@ export default makeStyles((theme) => ({
   searchbar: {
     paddingTop: 7,
     width: 300,
-    // make more mobile phone compatible later-on
-    [theme.breakpoints.down(400)]: {
-      width: 250,
+
+    // For mobile Phones
+
+    //280*653 phones
+    [theme.breakpoints.down(299)]: {
+      width: 140,
+    },
+
+    // 320*568 phones
+    [theme.breakpoints.between(300, 339)]: {
+      width: 180,
+    },
+
+    // 360*640 phones
+    [theme.breakpoints.between(340, 361)]: {
+      width: 215,
+    },
+
+    // 375*667 phones
+    [theme.breakpoints.between(365, 390)]: {
+      width: 235,
+    },
+
+    // 414*896 phones
+    [theme.breakpoints.between(400, 470)]: {
+      width: 260,
     },
   },
 }));
