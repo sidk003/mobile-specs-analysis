@@ -73,12 +73,13 @@ export const LandingPage = () => {
     setDrawerOpen(open);
   };
   // To check if device is a mobile
+  var isMobile = false;
   if (
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
     )
   )
-    var isMobile = true;
+    isMobile = true;
 
   if (drawerOpen === true && isMobile === true) showContent = false;
   else showContent = true;
@@ -107,7 +108,9 @@ export const LandingPage = () => {
                   />
                   <Route
                     path="/apple"
-                    render={() => <Apple darkState={darkState} />}
+                    render={() => (
+                      <Apple darkState={darkState} drawerOpen={drawerOpen} />
+                    )}
                   />
                   <Route path="/google" component={Google} />
                   <Route path="/huawei" component={Huawei} />

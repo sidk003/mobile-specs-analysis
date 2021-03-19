@@ -38,7 +38,7 @@ export default makeStyles((theme) => ({
       marginLeft: 30,
     },
 
-    // For iPads (768*1024)
+    // For iPads (768*1024) To be modified
     [theme.breakpoints.between(600, 1000)]: {
       marginLeft: (props) => props.LeftMarginIpad,
     },

@@ -8,8 +8,17 @@ import { Bargraph } from "./BarGraph/Bargraph";
 import useStyles from "./Styles";
 import PhoneModels from "./PhoneModels/PhoneModels";
 
-export const Apple = ({ darkState }) => {
-  const classes = useStyles();
+export const Apple = ({ darkState, drawerOpen }) => {
+  var LeftMarginIpad = drawerOpen ? 15 : 90;
+  var LeftMarginHD = !drawerOpen ? 80 : 0;
+  var LeftMarginFHD = !drawerOpen ? 70 : 80;
+
+  const classes = useStyles({
+    LeftMarginIpad: LeftMarginIpad,
+    LeftMarginHD: LeftMarginHD,
+    LeftMarginFHD: LeftMarginFHD,
+  });
+
   const twelveProMaxRef = useRef(null);
   const twelveProRef = useRef(null);
   const eightPlusRef = useRef(null);
