@@ -1,6 +1,6 @@
 const Apple = require("../models/Apple");
 var request = require("request");
-const spawn = require("child_process").spawn;
+// const spawn = require("child_process").spawn;
 
 // Calling Tiingo API
 const symbol = "aapl";

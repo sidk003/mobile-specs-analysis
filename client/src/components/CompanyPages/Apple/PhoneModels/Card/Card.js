@@ -18,6 +18,7 @@ export const CardComponent = ({ content }) => {
   const twelvepromaxContent = content.twelvepromaxContent;
   const twelveproContent = content.twelveproContent;
   const eightplusContent = content.eightplusContent;
+  const iphoneXContent = content.iphoneXContent;
 
   var title = "";
   var image = "";
@@ -52,6 +53,15 @@ export const CardComponent = ({ content }) => {
     price = eightplusContent.price;
     date = eightplusContent.date;
     specs = eightplusContent.specs;
+  } else if (
+    iphoneXContent !== undefined &&
+    iphoneXContent.specs !== undefined
+  ) {
+    title = iphoneXContent.title;
+    image = iphoneXContent.image;
+    price = iphoneXContent.price;
+    date = iphoneXContent.date;
+    specs = iphoneXContent.specs;
   }
 
   return (

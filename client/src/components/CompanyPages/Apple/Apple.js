@@ -22,6 +22,7 @@ export const Apple = ({ darkState, drawerOpen }) => {
   const twelveProMaxRef = useRef(null);
   const twelveProRef = useRef(null);
   const eightPlusRef = useRef(null);
+  const iphoneXRef = useRef(null);
 
   const { apple, getApple } = useContext(GlobalContext);
 
@@ -47,6 +48,11 @@ export const Apple = ({ darkState, drawerOpen }) => {
         behavior: "smooth",
         block: "nearest",
       });
+    } else if (name === "iPhone X") {
+      iphoneXRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+      });
     }
   };
 
@@ -59,6 +65,7 @@ export const Apple = ({ darkState, drawerOpen }) => {
   var twelvepromaxContent = "";
   var twelveproContent = "";
   var eightplusContent = "";
+  var iphoneXContent = "";
 
   if (apple !== undefined && apple.stockData !== undefined) {
     companyName = apple.title;
@@ -70,6 +77,7 @@ export const Apple = ({ darkState, drawerOpen }) => {
     twelvepromaxContent = apple.phonemodels.twelvepromax;
     twelveproContent = apple.phonemodels.twelvepro;
     eightplusContent = apple.phonemodels.eightplus;
+    iphoneXContent = apple.phonemodels.iphonex;
   }
 
   return (
@@ -96,6 +104,7 @@ export const Apple = ({ darkState, drawerOpen }) => {
         ref={twelveProMaxRef}
       />
       <PhoneModels twelveproContent={twelveproContent} ref={twelveProRef} />
+      <PhoneModels iphoneXContent={iphoneXContent} ref={iphoneXRef} />
       <PhoneModels eightplusContent={eightplusContent} ref={eightPlusRef} />
     </Box>
   );
