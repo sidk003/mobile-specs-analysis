@@ -2,7 +2,10 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
   "proxy": "http://localhost:5000",
+=======
+>>>>>>> 68478385d881e7e8668c28b4b99bf97d3d7f0ac6
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
@@ -10,15 +13,30 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.1",
+<<<<<<< HEAD
     "clsx": "^1.1.1",
+=======
+    "canvasjs-react-charts": "^1.0.5",
+    "clsx": "^1.1.1",
+    "d3": "^6.3.1",
+>>>>>>> 68478385d881e7e8668c28b4b99bf97d3d7f0ac6
     "material-ui-search-bar": "^1.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
+<<<<<<< HEAD
     "react-scripts": "^4.0.1",
     "react-slick": "^0.27.13",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+=======
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "react-scroll-to": "^3.0.0-beta.6",
+    "react-slick": "^0.27.13",
+    "react-stockcharts": "^0.7.8",
+    "redux": "^4.0.5",
+>>>>>>> 68478385d881e7e8668c28b4b99bf97d3d7f0ac6
     "slick-carousel": "^1.8.1",
     "web-vitals": "^0.2.4"
   },
@@ -45,5 +63,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+<<<<<<< HEAD
   }
+=======
+  },
+  "proxy": "http://localhost:5000"
+>>>>>>> 68478385d881e7e8668c28b4b99bf97d3d7f0ac6
 }
